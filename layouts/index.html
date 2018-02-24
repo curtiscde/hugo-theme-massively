@@ -1,17 +1,4 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Massively by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/noscript.css" /></noscript>
-	</head>
+{{ partial "htmlhead" . }}
 	<body class="is-loading">
 
 		{{ $posts := .Paginate (where .Data.Pages "Type" .Site.Params.Posts.foldername) 6 }}
@@ -20,16 +7,11 @@
 			<div id="wrapper" class="fade-in">
 
 				{{ if eq $posts.PageNumber 1 }}
-				<!-- Intro -->
 				{{ partial "intro.html" . }}
 				{{ end }}
 
-				<!-- Header -->
-				<header id="header">
-					<a href="{{ .Site.BaseURL }}" class="logo">{{ .Title }}</a>
-				</header>
-
-				{{ partial "nav.html" . }}
+				{{ partial "header" . }}
+				{{ partial "nav" . }}
 
 				<!-- Main -->
 					<div id="main">
@@ -76,22 +58,11 @@
 
 					</div>
 
-					{{ partial "footer/index.html" . }}
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; {{ .Title }}</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li><li>Hugo Port: <a href="https://curtistimson.co.uk">curttimson</a></li></ul>
-					</div>
-
+					{{ partial "footer/index" . }}
+					{{ partial "copyright" . }}
 			</div>
 
-		<!-- Scripts -->
-			<script src="{{ .Site.BaseURL }}assets/js/jquery.min.js"></script>
-			<script src="{{ .Site.BaseURL }}assets/js/jquery.scrollex.min.js"></script>
-			<script src="{{ .Site.BaseURL }}assets/js/jquery.scrolly.min.js"></script>
-			<script src="{{ .Site.BaseURL }}assets/js/skel.min.js"></script>
-			<script src="{{ .Site.BaseURL }}assets/js/util.js"></script>
-			<script src="{{ .Site.BaseURL }}assets/js/main.js"></script>
+			{{ partial "scripts" . }}
 
 	</body>
 </html>
