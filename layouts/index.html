@@ -30,22 +30,29 @@
 				<!-- Main -->
 					<div id="main">
 
-						{{ partial "posts/featured.html" . }}
+						{{ $posts := .Paginate (where .Data.Pages "Type" .Site.Params.Posts.foldername) 2 }}
+
+						<!-- {{ partial "posts/featured.html" . }} -->
 
 						<!-- Posts -->
 							<section class="posts">
+								{{ range $posts.Pages }}
 								<article>
 									<header>
-										<span class="date">April 24, 2017</span>
-										<h2><a href="#">Sed magna<br />
-										ipsum faucibus</a></h2>
+										{{ if .Date }}
+										<span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+										{{ end }}
+										<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									{{ if .Params.image }}
+									<a href="{{ .Permalink }}" class="image fit"><img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="" /></a>
+									{{ end }}
+									<p>{{ .Description }}</p>
 									<ul class="actions">
-										<li><a href="#" class="button">Full Story</a></li>
+										<li><a href="{{ .Permalink }}" class="button">{{ .Site.Data.post.linktext }}</a></li>
 									</ul>
 								</article>
+								{{ end }}
 								<article>
 									<header>
 										<span class="date">April 22, 2017</span>
