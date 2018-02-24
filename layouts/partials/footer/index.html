@@ -1,7 +1,8 @@
 <!-- Footer -->
 <footer id="footer">
+    {{ with .Site.Data.contactinfo.contactformaction }}
     <section>
-        <form method="post" action="#">
+        <form method="post" action="{{ . }}">
             <div class="field">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" />
@@ -19,6 +20,7 @@
             </ul>
         </form>
     </section>
+    {{ end }}
     <section class="split contact">
         {{ with .Site.Data.contactinfo.address }}
         <section class="alt">

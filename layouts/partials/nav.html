@@ -1,9 +1,10 @@
 <!-- Nav -->
 <nav id="nav">
     <ul class="links">
-        <li class="active"><a href="index.html">This is Massively</a></li>
-        <li><a href="generic.html">Generic Page</a></li>
-        <li><a href="elements.html">Elements Reference</a></li>
+        <li class="active"><a href="{{ .Site.BaseURL }}">{{ .Title }}</a></li>
+        {{ with .Site.Data.contactinfo }}
+        <li><a href="{{ .Site.BaseURL }}#footer">Contact</a></li>
+        {{ end }}
     </ul>
     {{ with .Site.Data.social }}
     <ul class="icons">

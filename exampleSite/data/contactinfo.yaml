@@ -1,3 +1,5 @@
+contactformaction: 'post-action'
+
 address:
 - line: '1234 Somewhere Road #87257'
 - line: 'Nashville, TN 00000-0000'
