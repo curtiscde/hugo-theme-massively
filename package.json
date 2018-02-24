@@ -1,0 +1,26 @@
+{
+  "name": "hugo-theme-massively",
+  "version": "0.0.1",
+  "description": "HTML5 UP theme Massively for Hugo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/curttimson/hugo-theme-massively.git"
+  },
+  "keywords": [
+    "hugo",
+    "hugo-theme",
+    "theme",
+    "html5up",
+    "massively"
+  ],
+  "author": "Curtis Timson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/curttimson/hugo-theme-massively/issues"
+  },
+  "homepage": "https://github.com/curttimson/hugo-theme-massively#readme"
+}
