@@ -1,0 +1,36 @@
+{{ partial "htmlhead" . }}
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+                {{ partial "header" . }}
+                {{ partial "nav" . }}
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+                        <section class="post">
+                            <header class="major">
+                                {{ if .Date }}
+                                <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+                                {{ end }}
+                                <h1>{{ .Title }}</h1>
+                                <p>{{ .Description }}</p>
+                            </header>
+                            {{ if .Params.image }}
+                            <div class="image main"><img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="" /></div>
+                            {{ end }}
+                            {{ .Content }}
+                        </section>
+
+					</div>
+
+                    {{ partial "footer/index" . }}
+                    {{ partial "copyright" . }}
+
+			</div>
+            {{ partial "scripts" . }}
+	</body>
+</html>
