@@ -14,11 +14,15 @@
 	</head>
 	<body class="is-loading">
 
+		{{ $posts := .Paginate (where .Data.Pages "Type" .Site.Params.Posts.foldername) 6 }}
+
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
+				{{ if eq $posts.PageNumber 1 }}
 				<!-- Intro -->
 				{{ partial "intro.html" . }}
+				{{ end }}
 
 				<!-- Header -->
 				<header id="header">
@@ -29,8 +33,6 @@
 
 				<!-- Main -->
 					<div id="main">
-
-						{{ $posts := .Paginate (where .Data.Pages "Type" .Site.Params.Posts.foldername) 6 }}
 
 						<!-- {{ partial "posts/featured.html" . }} -->
 
