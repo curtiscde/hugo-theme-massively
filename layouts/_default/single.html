@@ -23,6 +23,10 @@
                             <div class="image main"><img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="" /></div>
                             {{ end }}
                             {{ .Content }}
+
+                            {{ if .Params.disqusid }}
+                            <div id="disqus_thread"></div>
+                            {{ end }}
                         </section>
 
 					</div>
