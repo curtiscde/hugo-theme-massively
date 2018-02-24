@@ -1,0 +1,11 @@
+languageCode = "en-us"
+title = "Massively"
+baseURL = "https://curttimson.github.io/hugo-theme-massively/"
+theme = "../.."
+
+[params.posts]
+    foldername = "post"
+
+[params.settings]
+    googleanalytics = "UA-113904582-4"
+    disqus = "hugo-massively"
