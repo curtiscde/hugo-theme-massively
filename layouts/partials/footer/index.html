@@ -1,0 +1,67 @@
+<!-- Footer -->
+<footer id="footer">
+    {{ with .Site.Data.contactinfo.contactformaction }}
+    <section>
+        <form method="post" action="{{ . }}">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" />
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" />
+            </div>
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="3"></textarea>
+            </div>
+            <ul class="actions">
+                <li><input type="submit" value="Send Message" /></li>
+            </ul>
+        </form>
+    </section>
+    {{ end }}
+    <section class="split contact">
+        {{ with .Site.Data.contactinfo.address }}
+        <section class="alt">
+            <h3>Address</h3>
+            <p>
+                {{ range $i, $e := . }}
+                    {{ if $i }} <br/> {{ end }} {{ .line }}
+                {{ end }}
+            </p>
+        </section>
+        {{ end }}
+        {{ with .Site.Data.contactinfo.phone }}
+        <section>
+            <h3>Phone</h3>
+            <p><a href="tel:{{ . }}">{{ . }}</a></p>
+        </section>
+        {{ end }}
+        {{ with .Site.Data.contactinfo.email }}
+        <section>
+            <h3>Email</h3>
+            <p><a href="mailto:{{ . }}">{{ . }}</a></p>
+        </section>
+        {{ end }}
+        {{ with .Site.Data.social }}
+        <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+                {{ with .twitter}}
+                <li><a href="{{ . }}" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+                {{ end }}
+                {{ with .facebook}}
+                <li><a href="{{ . }}" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                {{ end }}
+                {{ with .instagram}}
+                <li><a href="{{ . }}" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+                {{ end }}
+                {{ with .github}}
+                <li><a href="{{ . }}" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+    </section>
+</footer>

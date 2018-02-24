@@ -1,0 +1,25 @@
+<!-- Nav -->
+<nav id="nav">
+    <ul class="links">
+        <li class="active"><a href="{{ .Site.BaseURL }}">{{ .Title }}</a></li>
+        {{ with .Site.Data.contactinfo }}
+        <li><a href="{{ .Site.BaseURL }}#footer">Contact</a></li>
+        {{ end }}
+    </ul>
+    {{ with .Site.Data.social }}
+    <ul class="icons">
+        {{ with .twitter}}
+        <li><a href="{{ . }}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        {{ end }}
+        {{ with .facebook}}
+        <li><a href="{{ . }}" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        {{ end }}
+        {{ with .instagram}}
+        <li><a href="{{ . }}" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        {{ end }}
+        {{ with .github}}
+        <li><a href="{{ . }}" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</nav>
