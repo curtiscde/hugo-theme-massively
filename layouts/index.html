@@ -63,13 +63,11 @@
 									{{ if $posts.HasPrev }}
 									<a href="{{ .Site.BaseURL }}{{ $posts.Prev.URL }}" class="previous">Prev</a>
 									{{ end }}
-									<!-- <a href="#" class="page active">1</a>
-									<a href="#" class="page">2</a>
-									<a href="#" class="page">3</a>
-									<span class="extra">&hellip;</span>
-									<a href="#" class="page">8</a>
-									<a href="#" class="page">9</a>
-									<a href="#" class="page">10</a> -->
+									{{ range $posts.Pagers }}
+									{{ if lt .PageNumber 10 }}
+									<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $posts.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+									{{ end }}
+									{{ end }}
 									{{ if $posts.HasNext }}
 									<a href="{{ .Site.BaseURL }}{{ $posts.Next.URL }}" class="next">Next</a>
 									{{ end }}
