@@ -40,21 +40,23 @@
 							</section>
 
 						<!-- Footer -->
-							<footer>
-								<div class="pagination">
-									{{ if $posts.HasPrev }}
-									<a href="{{ .Site.BaseURL }}{{ $posts.Prev.URL }}" class="previous">Prev</a>
-									{{ end }}
-									{{ range $posts.Pagers }}
-									{{ if lt .PageNumber 10 }}
-									<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $posts.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
-									{{ end }}
-									{{ end }}
-									{{ if $posts.HasNext }}
-									<a href="{{ .Site.BaseURL }}{{ $posts.Next.URL }}" class="next">Next</a>
-									{{ end }}
-								</div>
-							</footer>
+						{{ if gt $posts.TotalPages 1 }}
+						<footer>
+							<div class="pagination">
+								{{ if $posts.HasPrev }}
+								<a href="{{ .Site.BaseURL }}{{ $posts.Prev.URL }}" class="previous">Prev</a>
+								{{ end }}
+								{{ range $posts.Pagers }}
+								{{ if lt .PageNumber 10 }}
+								<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $posts.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+								{{ end }}
+								{{ end }}
+								{{ if $posts.HasNext }}
+								<a href="{{ .Site.BaseURL }}{{ $posts.Next.URL }}" class="next">Next</a>
+								{{ end }}
+							</div>
+						</footer>
+						{{ end }}
 
 					</div>
 
