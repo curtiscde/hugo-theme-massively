@@ -3,7 +3,7 @@
 
 		{{ $posts := where .Data.Pages "Type" .Site.Params.Posts.foldername }}
 		{{ $firstPost := first 1 $posts }}
-		{{ $postsPaging := .Paginate (after 1 ($posts)) 6 }}
+		{{ $postsPaging := .Paginate (after 1 ($posts)) .Site.Params.Posts.pagesize }}
 		
 		{{ range $firstPost }}
 		{{ .Title }}
@@ -27,6 +27,7 @@
 						{{ partial "posts/list.html" (dict "posts" $postsPaging) }}
 
 						<!-- Footer -->
+						{{ if gt $postsPaging.TotalPages 1 }}
 						<footer>
 							<div class="pagination">
 								{{ if $postsPaging.HasPrev }}
@@ -42,7 +43,7 @@
 								{{ end }}
 							</div>
 						</footer>
-
+						{{ end }}
 					</div>
 
 					{{ partial "footer/index" . }}
