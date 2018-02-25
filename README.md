@@ -2,6 +2,8 @@
 
 Massively theme ported from [HTML5 UP](https://html5up.net/) for use with the [Hugo static site generator](https://gohugo.io/).
 
+![](images/device-screenshots.png)
+
 ## Demo
 
 https://curttimson.github.io/hugo-theme-massively/
