@@ -29,6 +29,9 @@
         {{ with .googleplus }}
         <li><a href="{{ . }}" class="icon fa-google-plus"><span class="label">Google Plus</span></a></li>
         {{ end }}
+        {{ with .lastfm }}
+        <li><a href="{{ . }}" class="icon fa-lastfm"><span class="label">Last.fm</span></a></li>
+        {{ end }}
     </ul>
     {{ end }}
 </nav>
