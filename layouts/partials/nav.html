@@ -8,23 +8,26 @@
     </ul>
     {{ with .Site.Data.social }}
     <ul class="icons">
-        {{ with .twitter}}
+        {{ with .twitter }}
         <li><a href="{{ . }}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
         {{ end }}
-        {{ with .facebook}}
+        {{ with .facebook }}
         <li><a href="{{ . }}" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
         {{ end }}
-        {{ with .instagram}}
+        {{ with .instagram }}
         <li><a href="{{ . }}" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
         {{ end }}
-        {{ with .linkedin}}
+        {{ with .linkedin }}
         <li><a href="{{ . }}" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
         {{ end }}
-        {{ with .github}}
+        {{ with .github }}
         <li><a href="{{ . }}" class="icon fa-github"><span class="label">GitHub</span></a></li>
         {{ end }}
-        {{ with .youtube}}
+        {{ with .youtube }}
         <li><a href="{{ . }}" class="icon fa-youtube"><span class="label">Youtube</span></a></li>
+        {{ end }}
+        {{ with .googleplus }}
+        <li><a href="{{ . }}" class="icon fa-google-plus"><span class="label">Google Plus</span></a></li>
         {{ end }}
     </ul>
     {{ end }}
