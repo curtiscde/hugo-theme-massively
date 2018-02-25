@@ -26,24 +26,8 @@
 
 						{{ partial "posts/list.html" (dict "posts" $postsPaging) }}
 
-						<!-- Footer -->
-						{{ if gt $postsPaging.TotalPages 1 }}
-						<footer>
-							<div class="pagination">
-								{{ if $postsPaging.HasPrev }}
-								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Prev.URL }}" class="previous">Prev</a>
-								{{ end }}
-								{{ range $postsPaging.Pagers }}
-								{{ if lt .PageNumber 10 }}
-								<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
-								{{ end }}
-								{{ end }}
-								{{ if $postsPaging.HasNext }}
-								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Next.URL }}" class="next">Next</a>
-								{{ end }}
-							</div>
-						</footer>
-						{{ end }}
+						{{ partial "posts/pagination.html" (dict "paging" $postsPaging) }}
+						
 					</div>
 
 					{{ partial "footer/index" . }}
