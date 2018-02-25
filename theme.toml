@@ -1,0 +1,18 @@
+name = "Massively"
+license = "Creative Commons"
+licenselink = "https://github.com/curttimson/hugo-theme-massively/blob/master/LICENSE"
+description = "An elegant open-source and mobile-first theme"
+homepage = "https://html5up.net/uploads/demos/massively/index.html"
+tags = ["blog", "html5up"]
+features = ["blog"]
+min_version = 0.19
+
+[author]
+    name = "Curtis Timson"
+    homepage = "https://curtistimson.co.uk/"
+
+# If porting an existing theme
+[original]
+    author = "HTML5UP"
+    homepage = "https://html5up.net"
+    repo = "https://html5up.net/massively"
