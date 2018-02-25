@@ -1,7 +1,7 @@
 {{ partial "htmlhead" . }}
 	<body class="is-loading">
 
-		{{ $posts := .Paginate (where .Data.Pages "Type" .Site.Params.Posts.foldername) 6 }}
+		{{ $posts := .Paginate (where .Data.Pages "Type" .Site.Params.Posts.foldername) .Site.Params.Posts.pagesize }}
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
