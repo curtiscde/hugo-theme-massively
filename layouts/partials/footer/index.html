@@ -57,8 +57,23 @@
                 {{ with .instagram}}
                 <li><a href="{{ . }}" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
                 {{ end }}
+                {{ with .linkedin}}
+                <li><a href="{{ . }}" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                {{ end }}
                 {{ with .github}}
                 <li><a href="{{ . }}" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+                {{ end }}
+                {{ with .youtube}}
+                <li><a href="{{ . }}" class="icon alt fa-youtube"><span class="label">Youtube</span></a></li>
+                {{ end }}
+                {{ with .googleplus}}
+                <li><a href="{{ . }}" class="icon alt fa-google-plus"><span class="label">Google Plus</span></a></li>
+                {{ end }}
+                {{ with .lastfm}}
+                <li><a href="{{ . }}" class="icon alt fa-lastfm"><span class="label">Last.fm</span></a></li>
+                {{ end }}
+                {{ with .flickr}}
+                <li><a href="{{ . }}" class="icon alt fa-flickr"><span class="label">Flickr</span></a></li>
                 {{ end }}
             </ul>
         </section>
