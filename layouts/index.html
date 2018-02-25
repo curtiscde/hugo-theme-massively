@@ -3,11 +3,16 @@
 
 		{{ $posts := where .Data.Pages "Type" .Site.Params.Posts.foldername }}
 		{{ $firstPost := first 1 $posts }}
-		{{ $postsPaging := .Paginate (after 1 ($posts)) .Site.Params.Posts.pagesize }}
 		
-		{{ range $firstPost }}
-		{{ .Title }}
+
+		{{ if eq .Site.Params.Posts.featuredpost "true" }}
+			{{ .Scratch.Set "postsForPaging" (after 1 $posts) }}
+		{{ else }}
+			{{ .Scratch.Set "postsForPaging" $posts }}
 		{{ end }}
+		{{ $postsForPaging := .Scratch.Get "postsForPaging" }}
+
+		{{ $postsPaging := .Paginate $postsForPaging .Site.Params.Posts.pagesize }}
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
@@ -22,11 +27,29 @@
 				<!-- Main -->
 					<div id="main">
 
+						{{ if eq .Site.Params.Posts.featuredpost "true" }}
 						{{ partial "posts/featured.html" (dict "firstpost" $firstPost) }}
-
+						{{ end }}
 						{{ partial "posts/list.html" (dict "posts" $postsPaging) }}
-
-						{{ partial "posts/pagination.html" (dict "paging" $postsPaging) }}
+						
+						<!-- Footer -->
+						{{ if gt $postsPaging.TotalPages 1 }}
+						<footer>
+							<div class="pagination">
+								{{ if $postsPaging.HasPrev }}
+								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Prev.URL }}" class="previous">Prev</a>
+								{{ end }}
+								{{ range $postsPaging.Pagers }}
+								{{ if lt .PageNumber 10 }}
+								<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+								{{ end }}
+								{{ end }}
+								{{ if $postsPaging.HasNext }}
+								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Next.URL }}" class="next">Next</a>
+								{{ end }}
+							</div>
+						</footer>
+						{{ end }}
 						
 					</div>
 

@@ -1,17 +1,17 @@
 <!-- Footer -->
-{{ if gt $paging.TotalPages 1 }}
+{{ if gt .paging.TotalPages 1 }}
 <footer>
     <div class="pagination">
-        {{ if $paging.HasPrev }}
-        <a href="{{ .Site.BaseURL }}{{ $paging.Prev.URL }}" class="previous">Prev</a>
+        {{ if .paging.HasPrev }}
+        <a href="{{ .Site.BaseURL }}{{ .paging.Prev.URL }}" class="previous">Prev</a>
         {{ end }}
-        {{ range $paging.Pagers }}
+        {{ range .paging.Pagers }}
         {{ if lt .PageNumber 10 }}
-        <a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $paging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+        <a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber .paging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
         {{ end }}
         {{ end }}
-        {{ if $paging.HasNext }}
-        <a href="{{ .Site.BaseURL }}{{ $paging.Next.URL }}" class="next">Next</a>
+        {{ if .paging.HasNext }}
+        <a href="{{ .Site.BaseURL }}{{ .paging.Next.URL }}" class="next">Next</a>
         {{ end }}
     </div>
 </footer>
