@@ -1,12 +1,23 @@
 {{ partial "htmlhead" . }}
 	<body class="is-loading">
 
-		{{ $posts := .Paginate (where .Data.Pages "Type" .Site.Params.Posts.foldername) .Site.Params.Posts.pagesize }}
+		{{ $posts := where .Data.Pages "Type" .Site.Params.Posts.foldername }}
+		{{ $firstPost := first 1 $posts }}
+		
+
+		{{ if eq .Site.Params.Posts.featuredpost "true" }}
+			{{ .Scratch.Set "postsForPaging" (after 1 $posts) }}
+		{{ else }}
+			{{ .Scratch.Set "postsForPaging" $posts }}
+		{{ end }}
+		{{ $postsForPaging := .Scratch.Get "postsForPaging" }}
+
+		{{ $postsPaging := .Paginate $postsForPaging .Site.Params.Posts.pagesize }}
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
-				{{ if eq $posts.PageNumber 1 }}
+				{{ if eq $postsPaging.PageNumber 1 }}
 				{{ partial "intro.html" . }}
 				{{ end }}
 
@@ -16,48 +27,30 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- {{ partial "posts/featured.html" . }} -->
-
-						<!-- Posts -->
-							<section class="posts">
-								{{ range $posts.Pages }}
-								<article>
-									<header>
-										{{ if .Date }}
-										<span class="date">{{ .Date.Format "January 2, 2006" }}</span>
-										{{ end }}
-										<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-									</header>
-									{{ if .Params.image }}
-									<a href="{{ .Permalink }}" class="image fit"><img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="" /></a>
-									{{ end }}
-									<p>{{ .Description }}</p>
-									<ul class="actions">
-										<li><a href="{{ .Permalink }}" class="button">{{ .Site.Data.post.linktext }}</a></li>
-									</ul>
-								</article>
-								{{ end }}
-							</section>
-
+						{{ if eq .Site.Params.Posts.featuredpost "true" }}
+						{{ partial "posts/featured.html" (dict "firstpost" $firstPost) }}
+						{{ end }}
+						{{ partial "posts/list.html" (dict "posts" $postsPaging) }}
+						
 						<!-- Footer -->
-						{{ if gt $posts.TotalPages 1 }}
+						{{ if gt $postsPaging.TotalPages 1 }}
 						<footer>
 							<div class="pagination">
-								{{ if $posts.HasPrev }}
-								<a href="{{ .Site.BaseURL }}{{ $posts.Prev.URL }}" class="previous">Prev</a>
+								{{ if $postsPaging.HasPrev }}
+								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Prev.URL }}" class="previous">Prev</a>
 								{{ end }}
-								{{ range $posts.Pagers }}
+								{{ range $postsPaging.Pagers }}
 								{{ if lt .PageNumber 10 }}
-								<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $posts.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+								<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
 								{{ end }}
 								{{ end }}
-								{{ if $posts.HasNext }}
-								<a href="{{ .Site.BaseURL }}{{ $posts.Next.URL }}" class="next">Next</a>
+								{{ if $postsPaging.HasNext }}
+								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Next.URL }}" class="next">Next</a>
 								{{ end }}
 							</div>
 						</footer>
 						{{ end }}
-
+						
 					</div>
 
 					{{ partial "footer/index" . }}
