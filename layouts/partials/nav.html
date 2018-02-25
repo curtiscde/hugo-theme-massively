@@ -32,6 +32,9 @@
         {{ with .lastfm }}
         <li><a href="{{ . }}" class="icon fa-lastfm"><span class="label">Last.fm</span></a></li>
         {{ end }}
+        {{ with .flickr }}
+        <li><a href="{{ . }}" class="icon fa-flickr"><span class="label">Flickr</span></a></li>
+        {{ end }}
     </ul>
     {{ end }}
 </nav>
