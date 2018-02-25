@@ -5,6 +5,7 @@ theme = "../.."
 
 [params.posts]
     foldername = "post"
+    pagesize = "6"
 
 [params.settings]
     googleanalytics = "UA-113904582-3"
