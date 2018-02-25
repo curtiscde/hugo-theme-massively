@@ -1,12 +1,18 @@
 {{ partial "htmlhead" . }}
 	<body class="is-loading">
 
-		{{ $posts := .Paginate (where .Data.Pages "Type" .Site.Params.Posts.foldername) 6 }}
+		{{ $posts := where .Data.Pages "Type" .Site.Params.Posts.foldername }}
+		{{ $firstPost := first 1 $posts }}
+		{{ $postsPaging := .Paginate (after 1 ($posts)) 6 }}
+		
+		{{ range $firstPost }}
+		{{ .Title }}
+		{{ end }}
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
-				{{ if eq $posts.PageNumber 1 }}
+				{{ if eq $postsPaging.PageNumber 1 }}
 				{{ partial "intro.html" . }}
 				{{ end }}
 
@@ -16,26 +22,26 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- {{ partial "posts/featured.html" . }} -->
+						{{ partial "posts/featured.html" (dict "firstpost" $firstPost) }}
 
-						{{ partial "posts/list.html" (dict "posts" $posts) }}
+						{{ partial "posts/list.html" (dict "posts" $postsPaging) }}
 
 						<!-- Footer -->
-							<footer>
-								<div class="pagination">
-									{{ if $posts.HasPrev }}
-									<a href="{{ .Site.BaseURL }}{{ $posts.Prev.URL }}" class="previous">Prev</a>
-									{{ end }}
-									{{ range $posts.Pagers }}
-									{{ if lt .PageNumber 10 }}
-									<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $posts.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
-									{{ end }}
-									{{ end }}
-									{{ if $posts.HasNext }}
-									<a href="{{ .Site.BaseURL }}{{ $posts.Next.URL }}" class="next">Next</a>
-									{{ end }}
-								</div>
-							</footer>
+						<footer>
+							<div class="pagination">
+								{{ if $postsPaging.HasPrev }}
+								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Prev.URL }}" class="previous">Prev</a>
+								{{ end }}
+								{{ range $postsPaging.Pagers }}
+								{{ if lt .PageNumber 10 }}
+								<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+								{{ end }}
+								{{ end }}
+								{{ if $postsPaging.HasNext }}
+								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Next.URL }}" class="next">Next</a>
+								{{ end }}
+							</div>
+						</footer>
 
 					</div>
 
