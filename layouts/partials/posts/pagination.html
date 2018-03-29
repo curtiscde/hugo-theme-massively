@@ -3,15 +3,15 @@
 <footer>
     <div class="pagination">
         {{ if .paging.HasPrev }}
-        <a href="{{ .Site.BaseURL }}{{ .paging.Prev.URL }}" class="previous">Prev</a>
+        <a href="{{ .paging.Prev.URL | relURL }}" class="previous">Prev</a>
         {{ end }}
         {{ range .paging.Pagers }}
         {{ if lt .PageNumber 10 }}
-        <a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber .paging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+        <a href="{{ .URL | relURL }}" class="page{{ if eq .PageNumber .paging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
         {{ end }}
         {{ end }}
         {{ if .paging.HasNext }}
-        <a href="{{ .Site.BaseURL }}{{ .paging.Next.URL }}" class="next">Next</a>
+        <a href="{{ .paging.Next.URL | relURL }}" class="next">Next</a>
         {{ end }}
     </div>
 </footer>

@@ -3,7 +3,7 @@
 
 		{{ $posts := where .Data.Pages "Type" .Site.Params.Posts.foldername }}
 		{{ $firstPost := first 1 $posts }}
-		
+
 
 		{{ if eq .Site.Params.Posts.featuredpost "true" }}
 			{{ .Scratch.Set "postsForPaging" (after 1 $posts) }}
@@ -31,26 +31,26 @@
 						{{ partial "posts/featured.html" (dict "firstpost" $firstPost) }}
 						{{ end }}
 						{{ partial "posts/list.html" (dict "posts" $postsPaging) }}
-						
+
 						<!-- Footer -->
 						{{ if gt $postsPaging.TotalPages 1 }}
 						<footer>
 							<div class="pagination">
 								{{ if $postsPaging.HasPrev }}
-								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Prev.URL }}" class="previous">Prev</a>
+								<a href="{{ $postsPaging.Prev.URL | relURL }}" class="previous">Prev</a>
 								{{ end }}
 								{{ range $postsPaging.Pagers }}
 								{{ if lt .PageNumber 10 }}
-								<a href="{{ $.Site.BaseURL }}{{ .URL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+								<a href="{{ .URL | relURL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
 								{{ end }}
 								{{ end }}
 								{{ if $postsPaging.HasNext }}
-								<a href="{{ .Site.BaseURL }}{{ $postsPaging.Next.URL }}" class="next">Next</a>
+								<a href="{{ $postsPaging.Next.URL | relURL }}" class="next">Next</a>
 								{{ end }}
 							</div>
 						</footer>
 						{{ end }}
-						
+
 					</div>
 
 					{{ partial "footer/index" . }}
