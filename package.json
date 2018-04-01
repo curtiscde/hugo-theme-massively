@@ -1,6 +1,6 @@
 {
   "name": "hugo-theme-massively",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "HTML5 UP theme Massively for Hugo",
   "main": "index.js",
   "scripts": {
