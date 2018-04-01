@@ -20,7 +20,7 @@
                                 <p>{{ .Description }}</p>
                             </header>
                             {{ if .Params.image }}
-                            <div class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></div>
+                            <div class="image main"><img src="{{ .Params.image | absURL }}" alt="" /></div>
                             {{ end }}
                             {{ .Content }}
 

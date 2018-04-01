@@ -9,7 +9,7 @@
         <p>{{ .Description }}</p>
     </header>
     {{ if .Params.image }}
-    <a href="{{ .Permalink }}" class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></a>
+    <a href="{{ .Permalink }}" class="image main"><img src="{{ .Params.image | absURL }}" alt="" /></a>
     {{ end }}
     <ul class="actions">
         <li><a href="{{ .Permalink }}" class="button big">{{ .Site.Data.post.linktext }}</a></li>
