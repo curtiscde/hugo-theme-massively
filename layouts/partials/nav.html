@@ -1,9 +1,9 @@
 <!-- Nav -->
 <nav id="nav">
     <ul class="links">
-        <li class="active"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></li>
+        <li class="active"><a href='{{ "/" | absURL }}'>{{ .Site.Title }}</a></li>
         {{ with .Site.Data.contactinfo }}
-        <li><a href="{{ .Site.BaseURL }}#footer">Contact</a></li>
+        <li><a href='{{ "#footer" | absURL }}'>Contact</a></li>
         {{ end }}
     </ul>
     {{ with .Site.Data.social }}
