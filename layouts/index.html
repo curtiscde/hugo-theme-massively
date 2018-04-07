@@ -1,5 +1,5 @@
 {{ partial "htmlhead" . }}
-	<body class="is-loading">
+	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-loading">
 
 		{{ $posts := where .Data.Pages "Type" .Site.Params.Posts.foldername }}
 		{{ $firstPost := first 1 $posts }}
