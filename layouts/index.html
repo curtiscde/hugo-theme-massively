@@ -28,9 +28,9 @@
 					<div id="main">
 
 						{{ if eq .Site.Params.Posts.featuredpost "true" }}
-						{{ partial "posts/featured.html" (dict "firstpost" $firstPost "SiteData" .Site.Data "SiteLanguage" .Site.Language.Lang) }}
+						{{ partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
 						{{ end }}
-						{{ partial "posts/list.html" (dict "posts" $postsPaging "SiteData" .Site.Data "SiteLanguage" .Site.Language.Lang) }}
+						{{ partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
 
 						<!-- Footer -->
 						{{ if gt $postsPaging.TotalPages 1 }}
