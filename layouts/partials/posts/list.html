@@ -1,4 +1,5 @@
 <!-- Posts -->
+{{ $data := index .SiteData .SiteLanguage }}
 <section class="posts">
     {{ range .posts.Pages }}
     <article>
@@ -13,7 +14,7 @@
         {{ end }}
         <p>{{ .Description }}</p>
         <ul class="actions">
-            <li><a href="{{ .Permalink }}" class="button">{{ .Site.Data.post.linktext }}</a></li>
+            <li><a href="{{ .Permalink }}" class="button">{{ $data.post.linktext }}</a></li>
         </ul>
     </article>
     {{ end }}

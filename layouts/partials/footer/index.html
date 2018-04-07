@@ -1,30 +1,31 @@
 <!-- Footer -->
+{{ $data := index .Site.Data .Site.Language.Lang }}
 <footer id="footer">
-    {{ with .Site.Data.contactinfo.contactformaction }}
+    {{ with $data.contactinfo.contactformaction }}
     <section>
         <form method="post" action="{{ . }}">
             <div class="field">
-                <label for="name">Name</label>
+                <label for="name">{{ i18n "CONTACT_FORM_FIELD_NAME" . }}</label>
                 <input type="text" name="name" id="name" />
             </div>
             <div class="field">
-                <label for="email">Email</label>
+                <label for="email">{{ i18n "CONTACT_FORM_FIELD_EMAIL" . }}</label>
                 <input type="text" name="email" id="email" />
             </div>
             <div class="field">
-                <label for="message">Message</label>
+                <label for="message">{{ i18n "CONTACT_FORM_FIELD_MESSAGE" . }}</label>
                 <textarea name="message" id="message" rows="3"></textarea>
             </div>
             <ul class="actions">
-                <li><input type="submit" value="Send Message" /></li>
+                <li><input type="submit" value='{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}' /></li>
             </ul>
         </form>
     </section>
     {{ end }}
     <section class="split contact">
-        {{ with .Site.Data.contactinfo.address }}
+        {{ with $data.contactinfo.address }}
         <section class="alt">
-            <h3>Address</h3>
+            <h3>{{ i18n "CONTACT_ADDRESS" . }}</h3>
             <p>
                 {{ range $i, $e := . }}
                     {{ if $i }} <br/> {{ end }} {{ .line }}
@@ -32,21 +33,21 @@
             </p>
         </section>
         {{ end }}
-        {{ with .Site.Data.contactinfo.phone }}
+        {{ with $data.contactinfo.phone }}
         <section>
-            <h3>Phone</h3>
+            <h3>{{ i18n "CONTACT_PHONE" . }}</h3>
             <p><a href="tel:{{ . }}">{{ . }}</a></p>
         </section>
         {{ end }}
-        {{ with .Site.Data.contactinfo.email }}
+        {{ with $data.contactinfo.email }}
         <section>
-            <h3>Email</h3>
+            <h3>{{ i18n "CONTACT_EMAIL" . }}</h3>
             <p><a href="mailto:{{ . }}">{{ . }}</a></p>
         </section>
         {{ end }}
-        {{ with .Site.Data.social }}
+        {{ with $data.social }}
         <section>
-            <h3>Social</h3>
+            <h3>{{ i18n "CONTACT_SOCIAL" . }}</h3>
             <ul class="icons alt">
                 {{ with .twitter}}
                 <li><a href="{{ . }}" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>

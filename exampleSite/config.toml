@@ -1,5 +1,4 @@
 languageCode = "en-us"
-title = "Massively"
 baseURL = "http://localhost:1313/"
 theme = "../.."
 
@@ -11,3 +10,11 @@ theme = "../.."
 [params.settings]
     googleanalytics = "UA-113904582-3"
     disqus = "hugo-massively"
+
+[languages]
+[languages.en]
+  title = "Massively - English Version"
+  languageName = "English"
+[languages.es]
+  languageName = "Español"
+  title = "Massively - Versión Español"

@@ -5,7 +5,7 @@
 		{{ $firstPost := first 1 $posts }}
 
 
-		{{ if eq .Site.Params.Posts.featuredpost "true" }}
+		{{ if and (eq .Site.Params.Posts.featuredpost "true") (gt (len $posts) 1) }}
 			{{ .Scratch.Set "postsForPaging" (after 1 $posts) }}
 		{{ else }}
 			{{ .Scratch.Set "postsForPaging" $posts }}
@@ -28,24 +28,24 @@
 					<div id="main">
 
 						{{ if eq .Site.Params.Posts.featuredpost "true" }}
-						{{ partial "posts/featured.html" (dict "firstpost" $firstPost) }}
+						{{ partial "posts/featured.html" (dict "firstpost" $firstPost "SiteData" .Site.Data "SiteLanguage" .Site.Language.Lang) }}
 						{{ end }}
-						{{ partial "posts/list.html" (dict "posts" $postsPaging) }}
+						{{ partial "posts/list.html" (dict "posts" $postsPaging "SiteData" .Site.Data "SiteLanguage" .Site.Language.Lang) }}
 
 						<!-- Footer -->
 						{{ if gt $postsPaging.TotalPages 1 }}
 						<footer>
 							<div class="pagination">
 								{{ if $postsPaging.HasPrev }}
-								<a href="{{ $postsPaging.Prev.URL | absURL }}" class="previous">Prev</a>
+								<a href="{{ $postsPaging.Prev.URL | absLangURL }}" class="previous"></a>
 								{{ end }}
 								{{ range $postsPaging.Pagers }}
 								{{ if lt .PageNumber 10 }}
-								<a href="{{ .URL | absURL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+								<a href="{{ .URL | absLangURL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
 								{{ end }}
 								{{ end }}
 								{{ if $postsPaging.HasNext }}
-								<a href="{{ $postsPaging.Next.URL | absURL }}" class="next">Next</a>
+								<a href="{{ $postsPaging.Next.URL | absLangURL }}" class="next">{{ i18n "NEXT" . }}</a>
 								{{ end }}
 							</div>
 						</footer>
