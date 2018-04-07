@@ -24,6 +24,9 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 /static/images/bg.jpg
 ```
 
+### Custom CSS
+The CSS of the site can be added to using custom CSS. See the [basic config.toml example](https://github.com/curttimson/hugo-theme-massively/blob/master/exampleSite/config.toml) as an example.
+
 ## Development
 
 ### Example Site Deployment
