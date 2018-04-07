@@ -11,3 +11,6 @@ theme = "../.."
 [params.settings]
     googleanalytics = "UA-113904582-3"
     disqus = "hugo-massively"
+
+[params]
+    custom_css=["css/custom.css"]
