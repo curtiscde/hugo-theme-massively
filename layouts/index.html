@@ -37,15 +37,15 @@
 						<footer>
 							<div class="pagination">
 								{{ if $postsPaging.HasPrev }}
-								<a href="{{ $postsPaging.Prev.URL | absLangURL }}" class="previous"></a>
+								<a href="{{ $postsPaging.Prev.URL }}" class="previous"></a>
 								{{ end }}
 								{{ range $postsPaging.Pagers }}
 								{{ if lt .PageNumber 10 }}
-								<a href="{{ .URL | absLangURL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
+								<a href="{{ .URL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
 								{{ end }}
 								{{ end }}
 								{{ if $postsPaging.HasNext }}
-								<a href="{{ $postsPaging.Next.URL | absLangURL }}" class="next">{{ i18n "NEXT" . }}</a>
+								<a href="{{ $postsPaging.Next.URL }}" class="next">{{ i18n "NEXT" . }}</a>
 								{{ end }}
 							</div>
 						</footer>
