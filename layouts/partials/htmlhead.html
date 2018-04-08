@@ -11,4 +11,44 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href='{{ "assets/css/main.css" | absURL }}' />
 		<noscript><link rel="stylesheet" href='{{ "assets/css/noscript.css" | absURL }}' /></noscript>
+		 {{ range .Site.Params.custom_css }}
+        <link rel="stylesheet" href="{{ . | absURL }}">
+        {{ end }}
+		
+		<meta name="theme" content="hugo-theme-massively">
+		{{ .Hugo.Generator }}
+
+		  {{ $scr := .Scratch }}
+		  {{/* Generate page description. */}}
+		  {{ $scr.Set "description" .Site.Data.metadata.Description }}
+		  {{ if .IsPage }}
+			  {{ $scr.Set "description" .Summary }}
+		  {{ end }}
+		  <meta name="description" content="{{ $scr.Get "description" }}">
+
+
+		  {{ if or .Site.RSSLink .RSSLink }}
+		  <link rel="alternate" href="{{ .RSSLink | default .Site.RSSLink  }}" type="application/rss+xml" title="{{ .Site.Title }}">
+		  <link rel="feed" href="{{ .RSSLink | default .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
+		  {{ end }}
+
+		  
+		  <meta property="twitter:card" content="summary_large_image">
+		  {{ with .Site.Data.social.twitter }}
+		  <meta property="twitter:site" content="@{{ replaceRE "^.*//twitter.com/([^/]+)" "$1" . }}">
+		  <meta property="twitter:creator" content="@{{ replaceRE "^.*//twitter.com/([^/]+)" "$1" . }}">
+		  {{ end }}
+		  <meta property="og:site_name" content="{{ .Site.Title }}">
+		  <meta property="og:url" content="{{ .Permalink }}">
+		  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
+		  <meta property="og:description" content="{{ $scr.Get "description" }}">
+		  {{if .Params.image }}<meta property="og:image" content="{{ .Params.image | absURL }}">{{end}}
+		  {{ if .IsPage }}
+		  {{ if not .PublishDate.IsZero }}<meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">
+		  {{ else if not .Date.IsZero }}<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
+		  {{ if not .Lastmod.IsZero }}<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
+		  {{ else }}
+		  {{ if not .Date.IsZero }}<meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
+		  {{ end }}
+
 	</head>

@@ -40,7 +40,7 @@
 								<a href="{{ $postsPaging.Prev.URL | absURL }}" class="previous">Prev</a>
 								{{ end }}
 								{{ range $postsPaging.Pagers }}
-								{{ if lt .PageNumber 10 }}
+								{{ if lt .PageNumber 15 }}
 								<a href="{{ .URL | absURL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
 								{{ end }}
 								{{ end }}
