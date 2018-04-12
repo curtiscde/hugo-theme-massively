@@ -1,4 +1,5 @@
 languageCode = "en-us"
+title = "Massively"
 baseURL = "https://curttimson.github.io/hugo-theme-massively/"
 theme = "../.."
 
@@ -13,7 +14,6 @@ theme = "../.."
 
 [languages]
 [languages.en]
-  title = "Massively - English Version"
   languageName = "English"
 [languages.es]
   languageName = "Español"
