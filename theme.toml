@@ -5,7 +5,7 @@ description = "An elegant open-source and mobile-first theme"
 homepage = "https://html5up.net/uploads/demos/massively/index.html"
 tags = ["blog", "html5up"]
 features = ["blog"]
-min_version = 0.19
+min_version = 0.20
 
 [author]
     name = "Curtis Timson"

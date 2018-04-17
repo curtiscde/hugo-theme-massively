@@ -1,4 +1,5 @@
 <!-- Posts -->
+{{ $data := .siteData }}
 <section class="posts">
     {{ range .posts.Pages }}
     <article>
@@ -9,11 +10,11 @@
             <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         </header>
         {{ if .Params.image }}
-        <a href="{{ .Permalink }}" class="image fit"><img src="{{ .Params.image | absURL }}" alt="" /></a>
+        <a href="{{ .Permalink }}" class="image fit"><img src="{{ .Params.image | relURL }}" alt="" /></a>
         {{ end }}
         <p>{{ .Description }}</p>
         <ul class="actions">
-            <li><a href="{{ .Permalink }}" class="button">{{ .Site.Data.post.linktext }}</a></li>
+            <li><a href="{{ .Permalink }}" class="button">{{ $data.post.linktext }}</a></li>
         </ul>
     </article>
     {{ end }}

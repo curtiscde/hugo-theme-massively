@@ -1,5 +1,5 @@
 {{ partial "htmlhead" . }}
-	<body class="is-loading">
+	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-loading">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -20,7 +20,7 @@
                                 <p>{{ .Description }}</p>
                             </header>
                             {{ if .Params.image }}
-                            <div class="image main"><img src="{{ .Params.image | absURL }}" alt="" /></div>
+                            <div class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></div>
                             {{ end }}
                             {{ .Content }}
 

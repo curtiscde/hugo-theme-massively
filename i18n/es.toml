@@ -1,0 +1,28 @@
+[CONTACT_ADDRESS]
+  other = "Dirección"
+[CONTACT_EMAIL]
+  other = "Correo Electrónico"
+[CONTACT_FORM_FIELD_EMAIL]
+  other = "Correo Electrónico"
+[CONTACT_FORM_FIELD_MESSAGE]
+  other = "Mensaje"
+[CONTACT_FORM_FIELD_NAME]
+  other = "Nombre"
+[CONTACT_FORM_SUBMIT_SEND_MESSAGE]
+  other = "Enviar Un Mensaje"
+[CONTACT_PHONE]
+  other = "Teléfono"
+[CONTACT_SOCIAL]
+  other = "Social"
+[COPYRIGHT_MESSAGE_1]
+  other = "Diseño: [HTML5 UP](https://html5up.net)"
+[COPYRIGHT_MESSAGE_2]
+  other = "Implementacion Hugo: [curttimson](https://curtistimson.co.uk)"
+[INTRO_CONTINUE]
+  other = "Continuar"
+[NAV_CONTACT]
+  other = "Contacto"
+[PAGINATION_NEXT]
+  other = "Próximo"
+[PAGINATION_PREVIOUS]
+  other = "Previo"

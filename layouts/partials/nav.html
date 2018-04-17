@@ -1,12 +1,18 @@
 <!-- Nav -->
+{{ $data := index .Site.Data .Site.Language.Lang }}
 <nav id="nav">
     <ul class="links">
-        <li class="active"><a href='{{ "/" | absURL }}'>{{ .Site.Title }}</a></li>
-        {{ with .Site.Data.contactinfo }}
-        <li><a href='{{ "#footer" | absURL }}'>Contact</a></li>
+        <li class="active"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
+        {{ with $data.contactinfo }}
+        <li><a href='{{ "#footer" | relLangURL }}'>{{ i18n "NAV_CONTACT" . }}</a></li>
+        {{ end }}
+        {{ if .IsTranslated }}
+        {{ range .AllTranslations }}
+        <li {{if eq ($.Site.Language) (.Language)}}class="active"{{end}}><a href='{{ .Permalink }}'>{{ .Language.LanguageName }}</a></li>
+        {{ end }}
         {{ end }}
     </ul>
-    {{ with .Site.Data.social }}
+    {{ with $data.social }}
     <ul class="icons">
         {{ with .twitter }}
         <li><a href="{{ . }}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>

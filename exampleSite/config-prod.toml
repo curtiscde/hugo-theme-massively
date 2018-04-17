@@ -11,3 +11,10 @@ theme = "../.."
 [params.settings]
     googleanalytics = "UA-113904582-4"
     disqus = "hugo-massively"
+
+[languages]
+[languages.en]
+  languageName = "English"
+[languages.es]
+  languageName = "Español"
+  title = "Massively - Versión Español"

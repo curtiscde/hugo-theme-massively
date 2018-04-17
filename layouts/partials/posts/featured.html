@@ -1,4 +1,5 @@
 <!-- Featured Post -->
+{{ $data := .siteData }}
 {{ range .firstpost }}
 <article class="post featured">
     <header class="major">
@@ -9,10 +10,10 @@
         <p>{{ .Description }}</p>
     </header>
     {{ if .Params.image }}
-    <a href="{{ .Permalink }}" class="image main"><img src="{{ .Params.image | absURL }}" alt="" /></a>
+    <a href="{{ .Permalink }}" class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></a>
     {{ end }}
     <ul class="actions">
-        <li><a href="{{ .Permalink }}" class="button big">{{ .Site.Data.post.linktext }}</a></li>
+        <li><a href="{{ .Permalink }}" class="button big">{{ $data.post.linktext }}</a></li>
     </ul>
 </article>
 {{ end }}
