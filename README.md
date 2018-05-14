@@ -6,7 +6,7 @@ Massively theme ported from [HTML5 UP](https://html5up.net/) for use with the [H
 
 ## Demo
 
-https://curttimson.github.io/hugo-theme-massively/
+https://hugo-theme-massively.netlify.com/
 
 ## Setup
 
