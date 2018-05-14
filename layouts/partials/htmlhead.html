@@ -10,5 +10,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href='{{ "assets/css/main.css" | relURL }}' />
+		{{ with .Site.Params.favicon }}
+		<link rel="shortcut icon" href="{{ . }}">
+		{{ end }}
 		<noscript><link rel="stylesheet" href='{{ "assets/css/noscript.css" | relURL }}' /></noscript>
 	</head>

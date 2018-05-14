@@ -3,6 +3,10 @@ title = "Massively"
 baseURL = "http://localhost:1313/"
 theme = "../.."
 
+# [params]
+  # set below parameter to define a favicon
+  # favicon = "favicon.ico"
+
 [params.posts]
     foldername = "post"
     pagesize = "6"
