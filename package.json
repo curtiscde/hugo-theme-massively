@@ -1,6 +1,6 @@
 {
   "name": "hugo-theme-massively",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "HTML5 UP theme Massively for Hugo",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,5 @@
     "url": "https://github.com/curttimson/hugo-theme-massively/issues"
   },
   "homepage": "https://github.com/curttimson/hugo-theme-massively#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-gh-pages": "^0.5.4"
-  }
+  "devDependencies": {}
 }

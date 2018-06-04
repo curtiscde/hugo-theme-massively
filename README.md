@@ -24,13 +24,18 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 /static/images/bg.jpg
 ```
 
+### Supported Languages
+
+ - English
+ - Spanish
+ - French
+
 ## Development
 
-### Example Site Deployment
+### Example Site Production Deployment
 
 ```
 $ hugo --config config-prod.toml
-$ gulp deploy
 ```
 
 ## Original Theme Credits
