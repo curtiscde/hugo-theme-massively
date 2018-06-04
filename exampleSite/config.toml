@@ -7,10 +7,11 @@ theme = "../.."
   # set below parameter to define a favicon
   # favicon = "favicon.ico"
 
-[params.posts]
-    foldername = "post"
-    pagesize = "6"
-    featuredpost = "true"
+# Below parameters can be set to override default post settings
+# [params.posts]
+#     foldername = "post"
+#     pagesize = "6"
+#     featuredpost = "true"
 
 [params.settings]
     googleanalytics = "UA-113904582-3"

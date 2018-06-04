@@ -1,21 +1,24 @@
 {{ partial "htmlhead" . }}
 	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-loading">
 
-		{{ $posts := where .Data.Pages "Type" .Site.Params.Posts.foldername }}
+		{{ $postsFoldername := .Site.Params.Posts.foldername | default "post" }}
+		{{ $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
+		{{ $postsFeaturedPost := .Site.Params.Posts.featuredpost | default "true" }}
+
+		{{ $posts := where .Data.Pages "Type" $postsFoldername }}
 		{{ $firstPost := first 1 $posts }}
 
-
-		{{ if and (eq .Site.Params.Posts.featuredpost "true") (gt (len $posts) 1) }}
+		{{ if and (eq $postsFeaturedPost "true") (gt (len $posts) 1) }}
 			{{ .Scratch.Set "postsForPaging" (after 1 $posts) }}
 		{{ else }}
 			{{ .Scratch.Set "postsForPaging" $posts }}
 		{{ end }}
 		{{ $postsForPaging := .Scratch.Get "postsForPaging" }}
 
-		{{ $postsPaging := .Paginate $postsForPaging .Site.Params.Posts.pagesize }}
+		{{ $postsPaging := .Paginate $postsForPaging $postsPageSize }}
 
 		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+			<div id="wrapper" class="fade-in" data-pfn="{{ $postsFoldername }}" data-ps="{{ $postsPageSize }}" data-pfp="{{ $postsFeaturedPost }}">
 
 				{{ if eq $postsPaging.PageNumber 1 }}
 				{{ partial "intro.html" . }}
@@ -27,7 +30,7 @@
 				<!-- Main -->
 					<div id="main">
 
-						{{ if eq .Site.Params.Posts.featuredpost "true" }}
+						{{ if eq $postsFeaturedPost "true" }}
 						{{ partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
 						{{ end }}
 						{{ partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
