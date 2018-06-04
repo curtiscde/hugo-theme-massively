@@ -16,12 +16,6 @@ See the demo's configuration as an example:
 
 https://github.com/curttimson/hugo-theme-massively/blob/master/exampleSite/config-prod.toml
 
-### Supported Languages
-
- - English
- - Spanish
- - French
-
 ### Cover Image
 
 The cover image URL is hard-coded, therefore to replace this add an image to the following location in your Hugo application:
@@ -30,9 +24,15 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 /static/images/bg.jpg
 ```
 
+### Supported Languages
+
+ - English
+ - Spanish
+ - French
+
 ## Development
 
-### Example Site Deployment
+### Example Site Production Deployment
 
 ```
 $ hugo --config config-prod.toml
