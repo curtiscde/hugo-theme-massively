@@ -1,0 +1,5 @@
+Required to prevent error when folder isn't present.
+
+https://discourse.gohugo.io/t/some-users-receiving-unable-to-find-archetypes-directory/12565
+
+https://github.com/curttimson/hugo-theme-massively/issues/34
