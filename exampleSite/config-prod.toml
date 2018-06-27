@@ -14,7 +14,6 @@ theme = "../.."
 #     featuredpost = "true"
 
 [params.settings]
-    googleanalytics = "UA-113904582-4"
     disqus = "hugo-massively"
 
 [languages]
