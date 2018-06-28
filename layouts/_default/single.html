@@ -25,10 +25,8 @@
                             {{ .Content }}
 
                             {{ partial "postcustom" . }}
-
-                            {{ if .Params.disqusid }}
-                            <div id="disqus_thread"></div>
-                            {{ end }}
+                            
+                            {{ template "_internal/disqus.html" . }}
                         </section>
 
 					</div>
