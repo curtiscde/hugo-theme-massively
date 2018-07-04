@@ -2,6 +2,7 @@ languageCode = "en-us"
 title = "Massively"
 baseURL = "https://hugo-theme-massively.netlify.com/"
 theme = "../.."
+googleanalytics = "UA-113904582-4"
 
 # [params]
   # set below parameter to define a favicon
@@ -14,7 +15,6 @@ theme = "../.."
 #     featuredpost = "true"
 
 [params.settings]
-    googleanalytics = "UA-113904582-4"
     disqus = "hugo-massively"
 
 [languages]

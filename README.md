@@ -16,6 +16,12 @@ See the demo's configuration as an example:
 
 https://github.com/curttimson/hugo-theme-massively/blob/master/exampleSite/config-prod.toml
 
+#### Hugo Internal Templates
+
+The theme currently also supports the following ["internal templates" supplied by Hugo](https://gohugo.io/templates/internal/)
+
+ - [Google Analytics](https://gohugo.io/templates/internal/#configure-google-analytics)
+
 ### Cover Image
 
 The cover image URL is hard-coded, therefore to replace this add an image to the following location in your Hugo application:
