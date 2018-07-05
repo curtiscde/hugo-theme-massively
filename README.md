@@ -32,9 +32,11 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 
 ### Supported Languages
 
- - English
- - Spanish
- - French
+ - [English](https://github.com/curttimson/hugo-theme-massively/blob/master/i18n/en.toml)
+ - [French](https://github.com/curttimson/hugo-theme-massively/blob/master/i18n/fr.toml)
+ - [Simplified Chinese](https://github.com/curttimson/hugo-theme-massively/blob/master/i18n/zh.toml)
+ - [Spanish](https://github.com/curttimson/hugo-theme-massively/blob/master/i18n/es.toml)
+
 
 ## Development
 
