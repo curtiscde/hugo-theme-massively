@@ -1,0 +1,28 @@
+[CONTACT_ADDRESS]
+  other = "地址"
+[CONTACT_EMAIL]
+  other = "邮箱"
+[CONTACT_FORM_FIELD_EMAIL]
+  other = "邮箱"
+[CONTACT_FORM_FIELD_MESSAGE]
+  other = "信息"
+[CONTACT_FORM_FIELD_NAME]
+  other = "姓名"
+[CONTACT_FORM_SUBMIT_SEND_MESSAGE]
+  other = "发送信息"
+[CONTACT_PHONE]
+  other = "电话"
+[CONTACT_SOCIAL]
+  other = "社交媒体"
+[COPYRIGHT_MESSAGE_1]
+  other = "Design: [HTML5 UP](https://html5up.net)"
+[COPYRIGHT_MESSAGE_2]
+  other = "Hugo Port: [curttimson](https://curtistimson.co.uk)"
+[INTRO_CONTINUE]
+  other = "继续"
+[NAV_CONTACT]
+  other = "联系方式"
+[PAGINATION_NEXT]
+  other = "下一页"
+[PAGINATION_PREVIOUS]
+  other = "前一页"
