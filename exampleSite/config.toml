@@ -3,6 +3,7 @@ title = "Massively"
 baseURL = "http://localhost:1313/"
 theme = "../.."
 googleanalytics = "UA-113904582-3"
+disqusShortname = "hugo-massively"
 
 # [params]
   # set below parameter to define a favicon
@@ -13,9 +14,6 @@ googleanalytics = "UA-113904582-3"
 #     foldername = "post"
 #     pagesize = "6"
 #     featuredpost = "true"
-
-[params.settings]
-    disqus = "hugo-massively"
 
 [languages]
 [languages.en]
