@@ -20,6 +20,7 @@ https://github.com/curttimson/hugo-theme-massively/blob/master/exampleSite/confi
 
 The theme currently also supports the following ["internal templates" supplied by Hugo](https://gohugo.io/templates/internal/)
 
+ - [Disqus](https://gohugo.io/templates/internal/#disqus)
  - [Google Analytics](https://gohugo.io/templates/internal/#configure-google-analytics)
 
 ### Cover Image
