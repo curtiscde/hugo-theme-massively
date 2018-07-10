@@ -38,6 +38,9 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
  - [Simplified Chinese](https://github.com/curttimson/hugo-theme-massively/blob/master/i18n/zh.toml)
  - [Spanish](https://github.com/curttimson/hugo-theme-massively/blob/master/i18n/es.toml)
 
+## Custom Front Matter
+
+ - `disableComments` - If set to `true` this will disable comments on the post when Disqus is enabled.
 
 ## Development
 
