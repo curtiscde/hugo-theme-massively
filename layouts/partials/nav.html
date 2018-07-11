@@ -3,6 +3,9 @@
 <nav id="nav">
     <ul class="links">
         <li class="active"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
+        {{ range .Site.Data.navigation.links }}
+            <li><a href="{{ .url | relURL }}" {{ if in .url "http" }}target="_blank"{{ end }}>{{ .title }}</a></li>
+        {{ end }}
         {{ with $data.contactinfo }}
         <li><a href='{{ "#footer" | relLangURL }}'>{{ i18n "NAV_CONTACT" . }}</a></li>
         {{ end }}
