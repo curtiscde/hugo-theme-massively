@@ -50,6 +50,10 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 $ hugo --config config-prod.toml
 ```
 
+### Custom Navigation Pages
+
+If you would like to setup custom navigation pages you can add the content for the page you would like to link to under the content folder and then make sure you add a link entry for it under /data/navigation.toml. See the example site for a demonstration of this.
+
 ## Original Theme Credits
 
  - [Massively by HTML5 UP](https://html5up.net/massively)
