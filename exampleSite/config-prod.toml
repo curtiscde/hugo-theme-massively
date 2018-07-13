@@ -21,6 +21,6 @@ disqusShortname = "hugo-massively"
 [languages.es]
   languageName = "Español"
   title = "Massively - Versión Español"
-[languages.fr]
-  languageName = "Français"
-  title = "Massively - Version Française"
+#[languages.fr]
+#  languageName = "Français"
+#  title = "Massively - Version Française"
