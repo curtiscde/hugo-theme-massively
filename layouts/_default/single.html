@@ -13,7 +13,7 @@
 						<!-- Post -->
                         <section class="post">
                             <header class="major">
-                                {{ if .Date }}
+                                {{ if not .Date.IsZero }}
                                 <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
                                 {{ end }}
                                 <h1>{{ .Title }}</h1>
