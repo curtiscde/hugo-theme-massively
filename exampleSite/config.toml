@@ -8,6 +8,8 @@ disqusShortname = "hugo-massively"
 # [params]
   # set below parameter to define a favicon
   # favicon = "favicon.ico"
+  # define custom CSS paths here
+  # customCSS = [""]
 
 # Below parameters can be set to override default post settings
 # [params.posts]
