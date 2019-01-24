@@ -2,8 +2,8 @@ languageCode = "en-us"
 title = "Massively"
 baseURL = "http://localhost:1313/"
 theme = "../.."
-googleanalytics = "UA-113904582-3"
-disqusShortname = "hugo-massively"
+googleanalytics = ""
+disqusShortname = ""
 
 # [params]
   # set below parameter to define a favicon
