@@ -5,7 +5,7 @@
     <article>
         <header>
             {{ if not .Date.IsZero }}
-            <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+            <span class="date">{{ .Date.Format (.Site.Params.DateForm | default "January 2, 2006") }}</span>
             {{ end }}
             <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         </header>
