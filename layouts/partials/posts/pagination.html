@@ -4,7 +4,7 @@
 <!-- Thanks to https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/-->
 
 <!-- Number of links either side of the current page. -->
-{{ $adjacent_links := $outer.Site.Params.Posts.paginationPages }}
+{{ $adjacent_links := $outer.Site.Params.Posts.paginationPages | default 2 }}
 
 <!-- $max_links = ($adjacent_links * 2) + 1 -->
 {{ $max_links := (add (mul $adjacent_links 2) 1) }}
