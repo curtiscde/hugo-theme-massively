@@ -1,7 +1,7 @@
 {{ $paginator := .paginator }}
 {{ $outer := .outer}}
 
-<!-- Thanks to https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/-->
+<!-- Thanks to https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/ -->
 
 <!-- Number of links either side of the current page. -->
 {{ $adjacent_links := $outer.Site.Params.Posts.paginationPages | default 2 }}
@@ -54,26 +54,23 @@
                                 {{ $outer.Scratch.Set "page_number_flag" true }}
                             {{ end }}
 
+                    <!-- Upper limit pages. -->
+                    <!-- If the user is on a page which is in the upper limit. -->
+                    {{ else if ge $paginator.PageNumber $upper_limit }}
 
-                        <!-- Upper limit pages. -->
-                        <!-- If the user is on a page which is in the upper limit. -->
-                        {{ else if ge $paginator.PageNumber $upper_limit }}
+                        <!-- If the current loop page is greater than total pages minus $max_links -->
+                        {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
+                            {{ $outer.Scratch.Set "page_number_flag" true }}
+                        {{ end }}
 
-                            <!-- If the current loop page is greater than total pages minus $max_links -->
-                            {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
-                                {{ $outer.Scratch.Set "page_number_flag" true }}
-                            {{ end }}
+                    <!-- Middle pages. -->
+                    {{ else }}
 
-
-                        <!-- Middle pages. -->
-                        {{ else }}
-
-                            {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
-                                {{ $outer.Scratch.Set "page_number_flag" true }}
-                            {{ end }}
+                        {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
+                            {{ $outer.Scratch.Set "page_number_flag" true }}
+                        {{ end }}
 
                     {{ end }}
-
 
                 <!-- Simple page numbers. -->
                 {{ else }}
