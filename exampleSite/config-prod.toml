@@ -26,4 +26,4 @@ disqusShortname = ""
 #  title = "Massively - Version Française"
 
 #[params] 
-  #DateForm = "2.1.2006"
+  #DateFormat = "2.1.2006"
