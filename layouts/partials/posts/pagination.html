@@ -3,6 +3,9 @@
 
 <!-- Thanks to https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/ -->
 
+<!-- Show first and last link-->
+{{ $show_first_last := $outer.Site.Params.Posts.showFirstLast | default false }}
+
 <!-- Number of links either side of the current page. -->
 {{ $adjacent_links := $outer.Site.Params.Posts.paginationPages | default 2 }}
 
@@ -21,14 +24,15 @@
         <ul class="pagination">
 
             <!-- First page. -->
-            {{ if ne $paginator.PageNumber 1 }}
-            <li>
-                <a href="{{ $paginator.First.URL }}" class="extra first">
-                    {{ i18n "PAGINATION_FIRST" . }}
-                </a>
-            </li>
+            {{ if $show_first_last}}
+                {{ if ne $paginator.PageNumber 1 }}
+                <li>
+                    <a href="{{ $paginator.First.URL }}" class="extra first">
+                        {{ i18n "PAGINATION_FIRST" . }}
+                    </a>
+                </li>
+                {{ end }}
             {{ end }}
-
             <!-- Previous page. -->
             {{ if $paginator.HasPrev }}
             <li>
@@ -49,10 +53,10 @@
                     <!-- If the user is on a page which is in the lower limit.  -->
                     {{ if le $paginator.PageNumber $lower_limit }}
 
-                            <!-- If the current loop page is less than max_links. -->
-                            {{ if le .PageNumber $max_links }}
-                                {{ $outer.Scratch.Set "page_number_flag" true }}
-                            {{ end }}
+                        <!-- If the current loop page is less than max_links. -->
+                        {{ if le .PageNumber $max_links }}
+                            {{ $outer.Scratch.Set "page_number_flag" true }}
+                        {{ end }}
 
                     <!-- Upper limit pages. -->
                     <!-- If the user is on a page which is in the upper limit. -->
@@ -100,12 +104,14 @@
             {{ end }}
 
             <!-- Last page. -->
-            {{ if ne $paginator.PageNumber $paginator.TotalPages }}
-            <li>
-                <a href="{{ $paginator.Last.URL }}" class="extra last">
-                    {{ i18n "PAGINATION_LAST" . }}
-                </a>
-            </li>
+            {{ if $show_first_last}}
+                {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+                <li>
+                    <a href="{{ $paginator.Last.URL }}" class="extra last">
+                        {{ i18n "PAGINATION_LAST" . }}
+                    </a>
+                </li>
+                {{ end }}
             {{ end }}
         </ul>
     </div>

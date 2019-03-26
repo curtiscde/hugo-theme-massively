@@ -15,6 +15,10 @@ disqusShortname = ""
 #     pagesize = "6"
 #     featuredpost = "true"
 
+[params.posts]
+      paginationPages = 2
+      showFirstLast = false
+
 [languages]
 [languages.en]
   languageName = "English"
