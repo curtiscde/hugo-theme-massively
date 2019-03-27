@@ -24,7 +24,7 @@
         <ul class="pagination">
 
             <!-- First page. -->
-            {{ if $show_first_last}}
+            {{ if $show_first_last }}
                 {{ if ne $paginator.PageNumber 1 }}
                 <li>
                     <a href="{{ $paginator.First.URL }}" class="extra first">
@@ -104,7 +104,7 @@
             {{ end }}
 
             <!-- Last page. -->
-            {{ if $show_first_last}}
+            {{ if $show_first_last }}
                 {{ if ne $paginator.PageNumber $paginator.TotalPages }}
                 <li>
                     <a href="{{ $paginator.Last.URL }}" class="extra last">
