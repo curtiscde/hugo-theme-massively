@@ -1,7 +1,7 @@
 languageCode = "en-us"
 title = "Massively"
 baseURL = "https://hugo-theme-massively.netlify.com/"
-theme = "../.."
+theme = "hugo-theme-massively"
 googleanalytics = ""
 disqusShortname = ""
 
