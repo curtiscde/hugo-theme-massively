@@ -11,11 +11,9 @@ disqusShortname = ""
 
 # Below parameters can be set to override default post settings
 # [params.posts]
-#     folderName = "post"
-#     pageSize = "6"
-#     featuredPost = "true"
-#     paginationPages = 2
-#     showFirstLast = true
+#     foldername = "post"
+#     pagesize = "6"
+#     featuredpost = "true"
  
 [languages]
 [languages.en]
