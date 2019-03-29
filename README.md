@@ -46,9 +46,19 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 
 ### Example Site Production Deployment
 
+
+#### Production Deployment
+
 ```
 $ hugo --config config-prod.toml
 ```
+
+#### Running Locally
+
+```
+$ hugo server --themesDir ../..
+```
+
 
 ## Original Theme Credits
 
