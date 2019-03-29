@@ -1,8 +1,12 @@
+[build]
+    publish = "exampleSite/public"
+    command = "cd exampleSite && hugo --config config-prod.toml"
+
 [context.production.environment]
-HUGO_VERSION = "0.54.0"
+    HUGO_VERSION = "0.54.0"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.54.0"
+    HUGO_VERSION = "0.54.0"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.54.0"
+    HUGO_VERSION = "0.54.0"
