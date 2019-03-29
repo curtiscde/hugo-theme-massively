@@ -26,3 +26,7 @@
   other = "Next"
 [PAGINATION_PREVIOUS]
   other = "Prev"
+[PAGINATION_FIRST]
+  other = "First"
+[PAGINATION_LAST]
+  other = "Last"

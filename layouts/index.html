@@ -35,24 +35,9 @@
 						{{ end }}
 						{{ partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
 
-						<!-- Footer -->
-						{{ if gt $postsPaging.TotalPages 1 }}
-						<footer>
-							<div class="pagination">
-								{{ if $postsPaging.HasPrev }}
-								<a href="{{ $postsPaging.Prev.URL }}" class="previous"></a>
-								{{ end }}
-								{{ range $postsPaging.Pagers }}
-								{{ if lt .PageNumber 10 }}
-								<a href="{{ .URL }}" class="page{{ if eq .PageNumber $postsPaging.PageNumber }} active{{ end }}">{{ .PageNumber }}</a>
-								{{ end }}
-								{{ end }}
-								{{ if $postsPaging.HasNext }}
-								<a href="{{ $postsPaging.Next.URL }}" class="next">{{ i18n "NEXT" . }}</a>
-								{{ end }}
-							</div>
-						</footer>
-						{{ end }}
+						{{ $paginator := .Paginator }}
+						{{ $outer := . }}
+						{{ partial "posts/pagination.html" (dict "paginator" $paginator "outer" $outer)}}
 
 					</div>
 
