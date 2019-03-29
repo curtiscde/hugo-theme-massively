@@ -2937,12 +2937,12 @@
 			text-transform: uppercase;
 		}
 
-		.pagination .next, .pagination .previous {
+		.pagination .next, .pagination .previous, .pagination .first, .pagination .last {
 			text-decoration: none;
 			padding: 0 1.75rem;
 		}
 
-			.pagination .next:before, .pagination .previous:before {
+			.pagination .next:before, .pagination .previous:before, .pagination .first:before, .pagination .last:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
 				font-family: FontAwesome;
@@ -2951,7 +2951,7 @@
 				text-transform: none !important;
 			}
 
-			.pagination .next:before, .pagination .previous:before {
+			.pagination .next:before, .pagination .previous:before , .pagination .first:before, .pagination .last:before{
 				display: inline-block;
 				color: inherit !important;
 			}
@@ -2960,13 +2960,24 @@
 			content: '\f104';
 			margin-right: 0.9375em;
 		}
+		
+		.pagination .first:before {
+			content: '\f100';
+			margin-right: 0.9375em;
+		}
 
 		.pagination .next:before {
 			content: '\f105';
 			float: right;
 			margin-left: 0.9375em;
 		}
-
+		
+		.pagination .last:before {
+			content: '\f101';
+			float: right;
+			margin-left: 0.9375em;
+		}
+		
 		@media screen and (max-width: 980px) {
 
 			.pagination a, .pagination span {
