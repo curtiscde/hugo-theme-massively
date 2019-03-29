@@ -1,7 +1,6 @@
 languageCode = "en-us"
 title = "Massively"
 baseURL = "http://localhost:1313/"
-theme = "hugo-theme-massively"
 themesDir = "../.."
 googleanalytics = ""
 disqusShortname = ""
@@ -12,10 +11,12 @@ disqusShortname = ""
 
 # Below parameters can be set to override default post settings
 # [params.posts]
-#     foldername = "post"
-#     pagesize = "6"
-#     featuredpost = "true"
-
+#     folderName = "post"
+#     pageSize = "6"
+#     featuredPost = "true"
+#     paginationPages = 2
+#     showFirstLast = true
+ 
 [languages]
 [languages.en]
   languageName = "English"
@@ -25,6 +26,3 @@ disqusShortname = ""
 #[languages.fr]
 #  languageName = "Français"
 #  title = "Massively - Version Française"
-
-# [params] 
-#   DateFormat = "2.1.2006"
