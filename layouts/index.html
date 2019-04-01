@@ -33,7 +33,10 @@
 						{{ if eq $postsFeaturedPost "true" }}
 						{{ partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
 						{{ end }}
-						{{ partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
+
+						{{ if (not (and (eq (len $posts) 1) (eq $postsFeaturedPost "true"))) }}
+							{{ partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
+						{{ end }}
 
 						{{ $paginator := .Paginator }}
 						{{ $outer := . }}

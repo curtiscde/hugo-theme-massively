@@ -8,6 +8,8 @@ disqusShortname = ""
 # [params]
   # set below parameter to define a favicon
   # favicon = "favicon.ico"
+  # set to change date format
+  # dateFormat = "2.1.2006"
 
 # Below parameters can be set to override default post settings
 # [params.posts]
@@ -27,5 +29,3 @@ disqusShortname = ""
 #  languageName = "Français"
 #  title = "Massively - Version Française"
 
-#[params] 
-  #DateFormat = "2.1.2006"
