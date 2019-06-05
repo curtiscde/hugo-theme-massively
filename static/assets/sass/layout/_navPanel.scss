@@ -42,11 +42,11 @@
 			}
 		}
 
-		@include breakpoint(medium) {
+		@include breakpoint('<=medium') {
 			display: block;
 		}
 
-		@include breakpoint(small) {
+		@include breakpoint('<=small') {
 			font-size: 0.8rem;
 			padding: 0.25rem 1rem;
 		}
@@ -123,22 +123,22 @@
 				color: _palette(fg-bold);
 			}
 
-			@include breakpoint(small) {
+			@include breakpoint('<=small') {
 				height: 4rem;
 				line-height: 4rem;
 			}
 		}
 
-		@include breakpoint(medium) {
+		@include breakpoint('<=medium') {
 			display: block;
 		}
 
-		@include breakpoint(small) {
+		@include breakpoint('<=small') {
 			padding: 2.5rem 1.75rem;
 		}
 	}
 
-	@include breakpoint(medium) {
+	@include breakpoint('<=medium') {
 		body.is-navPanel-visible {
 			#wrapper {
 				opacity: 0.5;
