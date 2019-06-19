@@ -1,0 +1,32 @@
+[CONTACT_ADDRESS]
+  other = "住所"
+[CONTACT_EMAIL]
+  other = "メール"
+[CONTACT_FORM_FIELD_EMAIL]
+  other = "メール"
+[CONTACT_FORM_FIELD_MESSAGE]
+  other = "メッセージ"
+[CONTACT_FORM_FIELD_NAME]
+  other = "名前"
+[CONTACT_FORM_SUBMIT_SEND_MESSAGE]
+  other = "メッセージを送信"
+[CONTACT_PHONE]
+  other = "電話"
+[CONTACT_SOCIAL]
+  other = "SNS"
+[COPYRIGHT_MESSAGE_1]
+  other = "Design: [HTML5 UP](https://html5up.net)"
+[COPYRIGHT_MESSAGE_2]
+  other = "Hugo Port: [curttimson](https://curtistimson.co.uk)"
+[INTRO_CONTINUE]
+  other = "継続"
+[NAV_CONTACT]
+  other = "Contact"
+[PAGINATION_NEXT]
+  other = "次"
+[PAGINATION_PREVIOUS]
+  other = "前"
+[PAGINATION_FIRST]
+  other = "最初"
+[PAGINATION_LAST]
+  other = "最後"
