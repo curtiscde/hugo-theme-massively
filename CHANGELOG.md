@@ -6,7 +6,8 @@
 
 
 ### Minor Changes
- - Japanese content translations added
+ - Japanese content translations added ([#64](https://github.com/curtistimson/hugo-theme-massively/pull/64))
+ - Update assets to latest from HTML5UP ([#65](https://github.com/curtistimson/hugo-theme-massively/pull/65))
 
 ### Patches
 

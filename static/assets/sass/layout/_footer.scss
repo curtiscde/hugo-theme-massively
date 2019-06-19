@@ -95,7 +95,7 @@
 			font-size: 0.8rem;
 		}
 
-		@include breakpoint(medium) {
+		@include breakpoint('<=medium') {
 			display: block;
 
 			> section {
@@ -141,7 +141,7 @@
 			}
 		}
 
-		@include breakpoint(small) {
+		@include breakpoint('<=small') {
 			> section {
 				@include padding((_size(padding) * 1), (_size(padding) * 1));
 
@@ -175,7 +175,7 @@
 			}
 		}
 
-		@include breakpoint(xsmall) {
+		@include breakpoint('<=xsmall') {
 			width: 100%;
 		}
 	}
@@ -222,11 +222,11 @@
 			}
 		}
 
-		@include breakpoint(large) {
+		@include breakpoint('<=large') {
 			margin: (_size(padding) * 2) auto;
 		}
 
-		@include breakpoint(xsmall) {
+		@include breakpoint('<=xsmall') {
 			ul {
 				li {
 					border-left: 0;

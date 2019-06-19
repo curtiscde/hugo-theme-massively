@@ -1,7 +1,10 @@
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
-@import 'libs/skel';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import 'libs/html-grid';
+@import 'libs/fixed-grid';
 @import 'font-awesome.min.css';
 
 /*
@@ -30,7 +33,7 @@
 /* Intro */
 
 	#intro {
-		body.is-loading & {
+		body.is-preload & {
 			opacity: 1;
 
 			&:not(.hidden) {

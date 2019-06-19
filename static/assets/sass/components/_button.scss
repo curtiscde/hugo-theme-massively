@@ -18,6 +18,7 @@
 			'color #{_duration(transition)} ease-in-out'
 		));
 		border: 0;
+		border-radius: 0;
 		cursor: pointer;
 		display: inline-block;
 		font-family: _font(family-heading);
@@ -65,8 +66,6 @@
 		}
 
 		&.fit {
-			display: block;
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
 			width: 100%;
 		}
 
@@ -77,19 +76,19 @@
 			padding: 0 1.5rem;
 		}
 
-		&.big {
+		&.large {
 			font-size: 0.9rem;
 			height: 3.5rem;
 			line-height: 3.5rem;
 			padding: 0 2.75rem;
 		}
 
-		@include breakpoint(medium) {
+		@include breakpoint('<=medium') {
 			font-size: 0.9rem;
 			height: 3.25rem;
 			line-height: 3.25rem;
 
-			&.big {
+			&.large {
 				font-size: 1rem;
 				height: 3.75rem;
 				line-height: 3.75rem;
@@ -120,7 +119,7 @@
 				color: _palette($p, accent) !important;
 			}
 
-			&.special {
+			&.primary {
 				background-color: _palette($p, fg-bold);
 				box-shadow: none;
 				color: _palette($p, bg) !important;

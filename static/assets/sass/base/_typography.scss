@@ -9,15 +9,15 @@
 	html {
 		font-size: 16pt;
 
-		@include breakpoint(xlarge) {
+		@include breakpoint('<=xlarge') {
 			font-size: 12pt;
 		}
 
-		@include breakpoint(large) {
+		@include breakpoint('<=large') {
 			font-size: 11pt;
 		}
 
-		@include breakpoint(xxsmall) {
+		@include breakpoint('<=xxsmall') {
 			font-size: 10pt;
 		}
 	}

@@ -3,23 +3,25 @@
 <footer id="footer">
     {{ with $data.contactinfo.contactformaction }}
     <section>
-        <form method="post" action="{{ . }}">
-            <div class="field">
-                <label for="name">{{ i18n "CONTACT_FORM_FIELD_NAME" . }}</label>
-                <input type="text" name="name" id="name" />
-            </div>
-            <div class="field">
-                <label for="email">{{ i18n "CONTACT_FORM_FIELD_EMAIL" . }}</label>
-                <input type="text" name="email" id="email" />
-            </div>
-            <div class="field">
-                <label for="message">{{ i18n "CONTACT_FORM_FIELD_MESSAGE" . }}</label>
-                <textarea name="message" id="message" rows="3"></textarea>
-            </div>
-            <ul class="actions">
-                <li><input type="submit" value='{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}' /></li>
-            </ul>
-        </form>
+      <form method="post" action="{{ . }}">
+        <div class="fields">
+          <div class="field">
+            <label for="name">{{ i18n "CONTACT_FORM_FIELD_NAME" . }}</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="field">
+            <label for="email">{{ i18n "CONTACT_FORM_FIELD_EMAIL" . }}</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div class="field">
+            <label for="message">{{ i18n "CONTACT_FORM_FIELD_MESSAGE" . }}</label>
+            <textarea name="message" id="message" rows="3"></textarea>
+          </div>
+        </div>
+        <ul class="actions">
+          <li><input type="submit" value='{{ i18n "CONTACT_FORM_SUBMIT_SEND_MESSAGE" . }}' /></li>
+        </ul>
+      </form>
     </section>
     {{ end }}
     <section class="split contact">
