@@ -1,12 +1,12 @@
 # Change Log
 
-## `WIP`
+## `5.1.1-dev`
 
 ### Breaking Changes
 
 
 ### Minor Changes
-
+ - Japanese content translations added
 
 ### Patches
 
