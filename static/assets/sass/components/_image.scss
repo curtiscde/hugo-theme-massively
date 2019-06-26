@@ -66,7 +66,7 @@
 			}
 		}
 
-		@include breakpoint(small) {
+		@include breakpoint('<=small') {
 			&.fit {
 				margin: _size(element-margin) 0;
 			}

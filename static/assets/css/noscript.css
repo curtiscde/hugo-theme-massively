@@ -23,11 +23,11 @@
 
 /* Intro */
 
-	body.is-loading #intro {
+	body.is-preload #intro {
 		opacity: 1;
 	}
 
-		body.is-loading #intro:not(.hidden) + #header + #nav {
+		body.is-preload #intro:not(.hidden) + #header + #nav {
 			-moz-transform: none;
 			-webkit-transform: none;
 			-ms-transform: none;

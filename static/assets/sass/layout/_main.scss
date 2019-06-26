@@ -49,11 +49,11 @@
 				text-align: center;
 			}
 
-			@include breakpoint(large) {
+			@include breakpoint('<=large') {
 				@include padding((_size(padding) * 3), (_size(padding) * 2));
 			}
 
-			@include breakpoint(small) {
+			@include breakpoint('<=small') {
 				@include padding((_size(padding) * 2), (_size(padding) * 1));
 
 				header {
@@ -74,7 +74,7 @@
 		}
 
 		> .posts {
-			@include flexgrid((
+			@include fixed-grid((
 				columns:			2,
 				gutters:			(_size(padding) * 4),
 				horizontal-align:	center,
@@ -104,16 +104,16 @@
 				}
 			}
 
-			@include breakpoint(medium) {
-				@include flexgrid-resize((
+			@include breakpoint('<=medium') {
+				@include fixed-grid-resize((
 					columns:			2,
 					gutters:			(_size(padding) * 2.5),
 					flush:				false
 				));
 			}
 
-			@include breakpoint(small) {
-				@include flexgrid-resize((
+			@include breakpoint('<=small') {
+				@include fixed-grid-resize((
 					columns:			1,
 					gutters:			(_size(padding) * 2),
 					prev-columns:		2,
@@ -146,13 +146,13 @@
 			}
 		}
 
-		@include breakpoint(small) {
+		@include breakpoint('<=small') {
 			> * {
 				@include padding((_size(padding) * 1), (_size(padding) * 1));
 			}
 		}
 
-		@include breakpoint(xsmall) {
+		@include breakpoint('<=xsmall') {
 			width: 100%;
 		}
 	}
