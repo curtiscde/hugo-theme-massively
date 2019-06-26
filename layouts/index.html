@@ -3,12 +3,17 @@
 
 		{{ $postsFoldername := .Site.Params.Posts.foldername | default "post" }}
 		{{ $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
-		{{ $postsFeaturedPost := .Site.Params.Posts.featuredpost | default "true" }}
+
+		{{ .Scratch.Set "postsFeaturedPostEnabled" true }}
+		{{ if (or (eq .Site.Params.Posts.featuredpost "false") (eq .Site.Params.Posts.featuredpost false)) }}
+			{{ .Scratch.Set "postsFeaturedPostEnabled" false }}
+		{{ end }}
+		{{ $postsFeaturedPostEnabled := .Scratch.Get "postsFeaturedPostEnabled" }}
 
 		{{ $posts := where .Data.Pages "Type" $postsFoldername }}
 		{{ $firstPost := first 1 $posts }}
 
-		{{ if and (eq $postsFeaturedPost "true") (gt (len $posts) 1) }}
+		{{ if and (eq $postsFeaturedPostEnabled true) (gt (len $posts) 1) }}
 			{{ .Scratch.Set "postsForPaging" (after 1 $posts) }}
 		{{ else }}
 			{{ .Scratch.Set "postsForPaging" $posts }}
@@ -18,7 +23,7 @@
 		{{ $postsPaging := .Paginate $postsForPaging $postsPageSize }}
 
 		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in" data-pfn="{{ $postsFoldername }}" data-ps="{{ $postsPageSize }}" data-pfp="{{ $postsFeaturedPost }}">
+			<div id="wrapper" class="fade-in" data-pfn="{{ $postsFoldername }}" data-ps="{{ $postsPageSize }}" data-pfp="{{ $postsFeaturedPostEnabled }}">
 
 				{{ if eq $postsPaging.PageNumber 1 }}
 				{{ partial "intro.html" . }}
@@ -30,11 +35,11 @@
 				<!-- Main -->
 					<div id="main">
 
-						{{ if eq $postsFeaturedPost "true" }}
+						{{ if (eq $postsFeaturedPostEnabled true) }}
 						{{ partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
 						{{ end }}
 
-						{{ if (not (and (eq (len $posts) 1) (eq $postsFeaturedPost "true"))) }}
+						{{ if (not (and (eq (len $posts) 1) (eq $postsFeaturedPostEnabled true))) }}
 							{{ partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
 						{{ end }}
 
