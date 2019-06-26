@@ -6,6 +6,8 @@
 
 ### Minor Changes
  - Add npm script for running Hugo `exampleSite`
+ - Update config logic for featured post to use booleans (Fixes [#59](https://github.com/curtistimson/hugo-theme-massively/issues/59))
+   - Backwards compatibility support for string values - "true" and "false"
 
 ### Patches
 
