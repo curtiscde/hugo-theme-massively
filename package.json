@@ -1,8 +1,10 @@
 {
   "name": "hugo-theme-massively",
-  "version": "5.2.0-dev.0",
+  "version": "5.2.0-dev.1",
   "description": "HTML5 UP theme Massively for Hugo",
-  "main": "index.js",
+  "scripts": {
+    "hugo-dev": "cd exampleSite && hugo server --themesDir ../.."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/curttimson/hugo-theme-massively.git"

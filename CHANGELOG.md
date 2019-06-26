@@ -5,6 +5,7 @@
 ### Breaking Changes
 
 ### Minor Changes
+ - Add npm script for running Hugo `exampleSite`
 
 ### Patches
 
