@@ -1,13 +1,5 @@
 # Change Log
 
-## `5.2.0-dev`
-
-### Breaking Changes
-
-### Minor Changes
-
-### Patches
-
 
 ---
 ## `5.2.0`
