@@ -23,7 +23,6 @@
 ### Patches
  - Fix homepage issues with Hugo 0.57.0 ([#71](https://github.com/curtistimson/hugo-theme-massively/issues/71))
 
-
 ---
 ## `5.2.0`
 
