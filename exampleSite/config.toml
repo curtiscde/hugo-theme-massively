@@ -4,6 +4,7 @@ baseURL = "http://localhost:1313/"
 theme = "hugo-theme-massively"
 googleanalytics = ""
 disqusShortname = ""
+disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
 # [params]
   # set below parameter to define a favicon
@@ -15,7 +16,7 @@ disqusShortname = ""
 # [params.posts]
 #     folderName = "post"
 #     pageSize = "6"
-#     featuredPost = "true"
+#     featuredPost = true
 #     paginationPages = 2
 #     showFirstLast = false
  
