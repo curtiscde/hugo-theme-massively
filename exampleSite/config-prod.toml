@@ -4,6 +4,7 @@ baseURL = "https://hugo-theme-massively.netlify.com/"
 theme = "hugo-theme-massively"
 googleanalytics = ""
 disqusShortname = ""
+disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
 # [params]
   # set below parameter to define a favicon

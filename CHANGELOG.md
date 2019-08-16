@@ -10,6 +10,7 @@
    - Backwards compatibility support for string values - "true" and "false"
 
 ### Patches
+ - Fix homepage issues with Hugo 0.57.0 ([#71](https://github.com/curtistimson/hugo-theme-massively/issues/71))
 
 
 ---
