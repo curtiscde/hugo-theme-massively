@@ -11,6 +11,11 @@
 		{{ $postsFeaturedPostEnabled := .Scratch.Get "postsFeaturedPostEnabled" }}
 
 		{{ $posts := where .Data.Pages "Type" $postsFoldername }}
+
+		{{ if .IsHome }}
+		{{ $posts = .Site.RegularPages }}
+		{{ end }}
+
 		{{ $firstPost := first 1 $posts }}
 
 		{{ if and (eq $postsFeaturedPostEnabled true) (gt (len $posts) 1) }}
