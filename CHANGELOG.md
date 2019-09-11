@@ -12,6 +12,7 @@
 
 ### Patches
  - Fix homepage issues with Hugo 0.57.0 ([#71](https://github.com/curtistimson/hugo-theme-massively/issues/71))
+ - Fix preloading animation ([#75](https://github.com/curtistimson/hugo-theme-massively/issues/75))
 
 
 ---
@@ -26,5 +27,3 @@
 
 ### Patches
  - Fixes [#28](https://github.com/curtistimson/hugo-theme-massively/issues/28) - Feature post with only one post
-
-
