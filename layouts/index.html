@@ -1,5 +1,5 @@
 {{ partial "htmlhead" . }}
-	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-loading">
+	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-preload">
 
 		{{ $postsFoldername := .Site.Params.Posts.foldername | default "post" }}
 		{{ $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
