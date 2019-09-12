@@ -1,13 +1,9 @@
 # Change Log
 
 ---
-## `5.3.0-dev`
-
-### Breaking Changes
-
-### Minor Changes
-
+## `5.3.0`
 ### Patches
+- Fix preloading animation ([#75](https://github.com/curtistimson/hugo-theme-massively/issues/75))
 
 ---
 ## `5.3.0`
@@ -35,5 +31,3 @@
 
 ### Patches
  - Fixes [#28](https://github.com/curtistimson/hugo-theme-massively/issues/28) - Feature post with only one post
-
-
