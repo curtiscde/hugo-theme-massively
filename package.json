@@ -1,6 +1,6 @@
 {
   "name": "hugo-theme-massively",
-  "version": "5.3.0-dev",
+  "version": "5.3.0",
   "description": "HTML5 UP theme Massively for Hugo",
   "scripts": {
     "hugo-dev": "cd exampleSite && hugo server --themesDir ../.."
