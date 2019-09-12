@@ -1,7 +1,7 @@
 # Change Log
 
 ---
-## `5.3.0-dev`
+## `5.4.0-dev`
 
 ### Breaking Changes
 
@@ -10,7 +10,7 @@
 ### Patches
 
 ---
-## `5.2.0`
+## `5.4.0`
 
 ### Breaking Changes
 
@@ -23,7 +23,6 @@
 ### Patches
  - Fix homepage issues with Hugo 0.57.0 ([#71](https://github.com/curtistimson/hugo-theme-massively/issues/71))
  - Fix preloading animation ([#75](https://github.com/curtistimson/hugo-theme-massively/issues/75))
-
 
 ---
 ## `5.2.0`
