@@ -2,6 +2,11 @@
 
 ---
 ## `5.3.0`
+### Patches
+- Fix preloading animation ([#75](https://github.com/curtistimson/hugo-theme-massively/issues/75))
+
+---
+## `5.3.0`
 
 ### Breaking Changes
 
@@ -13,7 +18,6 @@
 
 ### Patches
  - Fix homepage issues with Hugo 0.57.0 ([#71](https://github.com/curtistimson/hugo-theme-massively/issues/71))
- - Fix preloading animation ([#75](https://github.com/curtistimson/hugo-theme-massively/issues/75))
 
 ---
 ## `5.2.0`
