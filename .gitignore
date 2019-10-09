@@ -1,3 +1,6 @@
 node_modules
 exampleSite/public
 .publish
+
+resources
+exampleSite/resources
