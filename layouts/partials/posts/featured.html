@@ -7,7 +7,11 @@
         <span class="date">{{ .Date.Format (.Site.Params.DateFormat | default "January 2, 2006") }}</span>
         {{ end }}
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        {{ if .Description }}
         <p>{{ .Description }}</p>
+        {{ else }}
+        <p>{{ .Summary }}</p>
+        {{ end }}
     </header>
     {{ if .Params.image }}
     <a href="{{ .Permalink }}" class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></a>
