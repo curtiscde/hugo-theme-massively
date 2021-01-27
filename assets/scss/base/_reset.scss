@@ -26,6 +26,27 @@
 		vertical-align: baseline;
 	}
 
+
+	img{ 
+	max-width: 100% ;
+	}
+	
+	.meta-media {
+	  position: relative;
+	  margin-bottom: 30px;
+	  float: left;
+	  width: 100%;
+	  height: 0;
+	  padding-bottom: 75%;
+	}
+	.video {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  left: 0;
+	  top: 0;
+	}
+
 	article, aside, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section {
 		display: block;
