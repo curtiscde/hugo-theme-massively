@@ -11,15 +11,14 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
   # favicon = "favicon.ico"
   # set to change date format
   # dateFormat = "2.1.2006"
-
 # Below parameters can be set to override default post settings
 # [params.posts]
 #     folderName = "post"
 #     pageSize = "6"
-#     featuredPost = "true"
+#     featuredPost = true
 #     paginationPages = 2
 #     showFirstLast = false
-
+ 
 [languages]
 [languages.en]
   languageName = "English"
@@ -29,4 +28,8 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 #[languages.fr]
 #  languageName = "Français"
 #  title = "Massively - Version Française"
-
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
