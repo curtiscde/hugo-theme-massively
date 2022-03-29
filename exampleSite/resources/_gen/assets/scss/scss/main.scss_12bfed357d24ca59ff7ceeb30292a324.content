@@ -101,7 +101,6 @@ html {
   @media screen and (max-width: 360px) {
     html {
       font-size: 10pt; } }
-
 body {
   color: #212931; }
 
@@ -1124,7 +1123,6 @@ hr {
           margin-top: -3rem; }
           .row.gtr-200.gtr-uniform > * {
             padding-top: 3rem; } }
-
 /* Box */
 .box {
   border: solid 2px;
@@ -1336,7 +1334,6 @@ form {
           width: calc(100% - 1.5rem); }
         form > .fields > .field.quarter {
           width: calc(100% - 1.5rem); } }
-
 label {
   display: block;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -1349,7 +1346,6 @@ label {
   @media screen and (max-width: 980px) {
     label {
       font-size: 0.9rem; } }
-
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -1576,7 +1572,6 @@ input[type="radio"]:focus + label:before {
       margin: 2rem 0; }
     .image.main {
       margin: 2rem 0; } }
-
 a.image {
   overflow: hidden; }
   a.image img {
@@ -1674,7 +1669,6 @@ ul.actions {
           ul.actions:not(.fixed) li button.icon:before,
           ul.actions:not(.fixed) li .button.icon:before {
             margin-left: -0.5rem; } }
-
 /* Icons */
 ul.icons {
   cursor: default;
@@ -1801,7 +1795,6 @@ header {
   @media screen and (max-width: 736px) {
     header.major {
       margin: 0 0 2rem 0; } }
-
 header.major .date:before, header.major .date:after {
   border-top-color: #eeeeee; }
 
@@ -1926,7 +1919,6 @@ table.alt tbody tr td {
   @media screen and (max-width: 480px) {
     .pagination .page, .pagination .extra {
       display: none; } }
-
 .pagination a, .pagination span {
   border-color: #eeeeee; }
 
@@ -1936,8 +1928,7 @@ table.alt tbody tr td {
     color: #18bfef !important;
     border-color: #18bfef;
     z-index: 1; }
-    .pagination a:hover + a,
-    .pagination a:hover + span {
+    .pagination a:hover + a, .pagination a:hover + span {
       border-left-color: #18bfef; }
   .pagination a.active {
     background-color: #eeeeee; }
@@ -1995,7 +1986,6 @@ table.alt tbody tr td {
   @media screen and (orientation: portrait) {
     #wrapper > .bg {
       background-size: auto,								auto,														auto 175%; } }
-
 /* Intro */
 #intro {
   color: #ffffff;
@@ -2142,7 +2132,6 @@ table.alt tbody tr td {
         margin-top: 0rem; }
       #intro .actions {
         display: none; } }
-
 /* Header */
 #header {
   color: #ffffff;
@@ -2221,7 +2210,6 @@ table.alt tbody tr td {
       #header .logo {
         font-size: 1.75rem;
         border-width: 3px !important; } }
-
 /* Nav */
 #nav {
   color: #ffffff;
@@ -2324,7 +2312,6 @@ table.alt tbody tr td {
   @media screen and (max-width: 980px) {
     #nav {
       display: none; } }
-
 /* Main */
 #main {
   background-color: #ffffff;
@@ -2436,7 +2423,6 @@ table.alt tbody tr td {
   @media screen and (max-width: 480px) {
     #main {
       width: 100%; } }
-
 /* Footer */
 #footer {
   color: #717981;
@@ -2577,8 +2563,7 @@ table.alt tbody tr td {
       color: #18bfef !important;
       border-color: #18bfef;
       z-index: 1; }
-      #footer .pagination a:hover + a,
-      #footer .pagination a:hover + span {
+      #footer .pagination a:hover + a, #footer .pagination a:hover + span {
         border-left-color: #18bfef; }
     #footer .pagination a.active {
       background-color: #e2e2e2; }
@@ -2706,7 +2691,6 @@ table.alt tbody tr td {
   @media screen and (max-width: 480px) {
     #footer {
       width: 100%; } }
-
 #copyright {
   color: #ffffff;
   position: relative;
@@ -2770,7 +2754,6 @@ table.alt tbody tr td {
       display: block; }
       #copyright ul li:first-child {
         margin-top: 0; } }
-
 /* Nav Panel */
 #navPanelToggle {
   text-decoration: none;
@@ -2814,7 +2797,6 @@ table.alt tbody tr td {
     #navPanelToggle {
       font-size: 0.8rem;
       padding: 0.25rem 1rem; } }
-
 #navPanel {
   -moz-transform: translateX(20rem);
   -webkit-transform: translateX(20rem);
@@ -2898,7 +2880,6 @@ table.alt tbody tr td {
   @media screen and (max-width: 736px) {
     #navPanel {
       padding: 2.5rem 1.75rem; } }
-
 @media screen and (max-width: 980px) {
   body.is-navPanel-visible #wrapper {
     opacity: 0.5; }

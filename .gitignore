@@ -1,3 +1,5 @@
 node_modules
 exampleSite/public
+exampleSite/resources
 .publish
+test/videos
