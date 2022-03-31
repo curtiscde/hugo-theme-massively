@@ -1,6 +1,7 @@
 [build]
+  base = "exampleSite/"
   publish = "exampleSite/public"
-  command = "cd exampleSite && hugo --gc --themesDir ../.. --config config-prod.toml"
+  command = "hugo --gc --themesDir ../.. --config config-prod.toml"
 
 [build.environment]
   HUGO_VERSION = "0.54.0"
