@@ -1,6 +1,6 @@
 # Hugo Theme Massively
 
-![](https://img.shields.io/badge/Hugo-%5E0.54.0-ff4088?style=flat-square&logo=hugo)
+![](https://img.shields.io/badge/Hugo-%5E0.54.0-ff4088?style=flat-square&logo=hugo) [![e2e tests](https://github.com/curtiscde/hugo-theme-massively/actions/workflows/e2e.yml/badge.svg)](https://github.com/curtiscde/hugo-theme-massively/actions/workflows/e2e.yml)
 
 Massively theme ported from [HTML5 UP](https://html5up.net/) for use with the [Hugo static site generator](https://gohugo.io/).
 
