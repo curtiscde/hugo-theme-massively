@@ -1,6 +1,6 @@
 {
   "name": "hugo-theme-massively",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "description": "HTML5 UP theme Massively for Hugo",
   "scripts": {
     "cypress": "cypress open",
