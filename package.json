@@ -1,6 +1,6 @@
 {
   "name": "hugo-theme-massively",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "description": "HTML5 UP theme Massively for Hugo",
   "scripts": {
     "cypress": "cypress open",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/curttimson/hugo-theme-massively.git"
+    "url": "git+https://github.com/curtiscde/hugo-theme-massively.git"
   },
   "keywords": [
     "hugo",
@@ -23,9 +23,9 @@
   "author": "Curtis Timson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/curttimson/hugo-theme-massively/issues"
+    "url": "https://github.com/curtiscde/hugo-theme-massively/issues"
   },
-  "homepage": "https://github.com/curttimson/hugo-theme-massively#readme",
+  "homepage": "https://github.com/curtiscde/hugo-theme-massively#readme",
   "devDependencies": {
     "cypress": "^9.5.3",
     "start-server-and-test": "^1.14.0",
