@@ -41,6 +41,10 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 ## Custom Front Matter
  - `disableComments` - If set to `true` this will disable comments on the post when Disqus is enabled.
 
+## Custom `<head>`
+
+If you wish to add custom CSS overrides, or other elements in the `<head>`, then this can be done by adding the following to the root of your Hugo app: `layouts/partials/htmlhead.custom.html`. Any content added to this file will then be injected at the end of the `<head>`.
+
 ## Development
 ### Example Site Production Deployment
 #### Production Deployment
@@ -52,12 +56,12 @@ $ hugo --config config-prod.toml
 
 #### Running Locally
 
-```
+```shell
 $ npm i
 $ npm run hugo-dev
 ```
 OR
-```
+```shell
 $ cd exampleSite
 $ hugo server --themesDir ../..
 ```
