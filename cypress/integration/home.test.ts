@@ -5,7 +5,8 @@ describe('Home', () => {
 
   it('displays title', () => {
     cy.get('h1')
-      .contains('This is Massively');
+      .contains('This is')
+      .contains('Massively');
   });
 
 });

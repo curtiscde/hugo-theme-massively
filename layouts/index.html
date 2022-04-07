@@ -1,67 +1,67 @@
 {{ partial "htmlhead" . }}
 	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-preload">
 
-		{{ $postsFoldername := .Site.Params.Posts.foldername | default "post" }}
-		{{ $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
+		{{- $postsFoldername := .Site.Params.Posts.foldername | default "post" }}
+		{{- $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
 
-		{{ .Scratch.Set "postsFeaturedPostEnabled" true }}
-		{{ if (or (eq .Site.Params.Posts.featuredpost "false") (eq .Site.Params.Posts.featuredpost false)) }}
-			{{ .Scratch.Set "postsFeaturedPostEnabled" false }}
-		{{ end }}
-		{{ $postsFeaturedPostEnabled := .Scratch.Get "postsFeaturedPostEnabled" }}
+		{{- .Scratch.Set "postsFeaturedPostEnabled" true }}
+		{{- if (or (eq .Site.Params.Posts.featuredpost "false") (eq .Site.Params.Posts.featuredpost false)) }}
+			{{- .Scratch.Set "postsFeaturedPostEnabled" false }}
+		{{- end }}
+		{{- $postsFeaturedPostEnabled := .Scratch.Get "postsFeaturedPostEnabled" }}
 
-		{{ $posts := where .Data.Pages "Type" $postsFoldername }}
+		{{- $posts := where .Data.Pages "Type" $postsFoldername }}
 
-		{{ if .IsHome }}
-		{{ $posts = .Site.RegularPages }}
-		{{ end }}
+		{{- if .IsHome }}
+		{{- $posts = .Site.RegularPages }}
+		{{- end }}
 
-		{{ $firstPost := first 1 $posts }}
+		{{- $firstPost := first 1 $posts }}
 
-		{{ if and (eq $postsFeaturedPostEnabled true) (gt (len $posts) 1) }}
-			{{ .Scratch.Set "postsForPaging" (after 1 $posts) }}
-		{{ else }}
-			{{ .Scratch.Set "postsForPaging" $posts }}
-		{{ end }}
-		{{ $postsForPaging := .Scratch.Get "postsForPaging" }}
+		{{- if and (eq $postsFeaturedPostEnabled true) (gt (len $posts) 1) -}}
+			{{- .Scratch.Set "postsForPaging" (after 1 $posts) }}
+		{{- else }}
+			{{- .Scratch.Set "postsForPaging" $posts }}
+		{{- end -}}
+		{{- $postsForPaging := .Scratch.Get "postsForPaging" -}}
 
-		{{ $postsPaging := .Paginate $postsForPaging $postsPageSize }}
+		{{- $postsPaging := .Paginate $postsForPaging $postsPageSize -}}
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in" data-pfn="{{ $postsFoldername }}" data-ps="{{ $postsPageSize }}" data-pfp="{{ $postsFeaturedPostEnabled }}">
 
-				{{ if eq $postsPaging.PageNumber 1 }}
-				{{ partial "intro.html" . }}
-				{{ end }}
+				{{- if eq $postsPaging.PageNumber 1 -}}
+				{{- partial "intro.html" . -}}
+				{{- end -}}
 
-				{{ partial "header" . }}
-				{{ partial "nav" . }}
+				{{- partial "header" . -}}
+				{{- partial "nav" . }}
 
 				<!-- Main -->
 					<div id="main">
 
-						{{ if (eq $postsFeaturedPostEnabled true) }}
-						{{ partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
-						{{ end }}
+						{{- if (eq $postsFeaturedPostEnabled true) }}
+						{{- partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
+						{{- end }}
 
-						{{ if (not (and (eq (len $posts) 1) (eq $postsFeaturedPostEnabled true))) }}
-							{{ partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
-						{{ end }}
+						{{- if (not (and (eq (len $posts) 1) (eq $postsFeaturedPostEnabled true))) }}
+							{{- partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
+						{{- end }}
 
-						{{ $paginator := .Paginator }}
-						{{ $outer := . }}
-						{{ partial "posts/pagination.html" (dict "paginator" $paginator "outer" $outer)}}
+						{{- $paginator := .Paginator }}
+						{{- $outer := . }}
+						{{- partial "posts/pagination.html" (dict "paginator" $paginator "outer" $outer)}}
 
 					</div>
 
-					{{ partial "footer/index" . }}
-					{{ partial "copyright" . }}
+					{{- partial "footer/index" . }}
+					{{- partial "copyright" . }}
 
 					<a href="#navPanel" id="navPanelToggle">{{ i18n "NAV_MENU" . }}</a>
 			</div>
 
-			{{ template "_internal/google_analytics.html" . }}
-			{{ partial "scripts/index" . }}
+			{{- template "_internal/google_analytics.html" . }}
+			{{- partial "scripts/index" . }}
 
 	</body>
 </html>
