@@ -7,91 +7,153 @@
 // Reset.
 // Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain)
 
-	html, body, div, span, applet, object,
-	iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
-	pre, a, abbr, acronym, address, big, cite,
-	code, del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var, b,
-	u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-	form, label, legend, table, caption, tbody,
-	tfoot, thead, tr, th, td, article, aside,
-	canvas, details, embed, figure, figcaption,
-	footer, header, hgroup, menu, nav, output, ruby,
-	section, summary, time, mark, audio, video {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline;
-	}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
 
-	img{ 
-	max-width: 100% ;
-	}
-	
-	.meta-media {
-	  position: relative;
-	  margin-bottom: 30px;
-	  float: left;
-	  width: 100%;
-	  height: 0;
-	  padding-bottom: 75%;
-	}
-	.video {
-	  position: absolute;
-	  width: 100%;
-	  height: 100%;
-	  left: 0;
-	  top: 0;
-	}
+body {
+	line-height: 1;
+}
 
-	article, aside, details, figcaption, figure,
-	footer, header, hgroup, menu, nav, section {
-		display: block;
-	}
+ol,
+ul {
+	list-style: none;
+}
 
-	body {
-		line-height: 1;
-	}
+blockquote,
+q {
+	quotes: none;
 
-	ol, ul {
-		list-style:none;
+	&:before,
+	&:after {
+		content: '';
+		content: none;
 	}
+}
 
-	blockquote,	q {
-		quotes: none;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-		&:before,
-		&:after {
-			content: '';
-			content: none;
-		}
-	}
+body {
+	-webkit-text-size-adjust: none;
+}
 
-	table {
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
+mark {
+	background-color: transparent;
+	color: inherit;
+}
 
-	body {
-		-webkit-text-size-adjust: none;
-	}
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
 
-	mark {
-		background-color: transparent;
-		color: inherit;
-	}
-
-	input::-moz-focus-inner {
-		border: 0;
-		padding: 0;
-	}
-
-	input, select, textarea {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-	}
+input,
+select,
+textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}

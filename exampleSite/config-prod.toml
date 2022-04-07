@@ -28,8 +28,3 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 #[languages.fr]
 #  languageName = "Français"
 #  title = "Massively - Version Française"
-[markup]
-  defaultMarkdownHandler = "goldmark"
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
