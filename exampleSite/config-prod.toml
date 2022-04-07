@@ -22,7 +22,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 #     featuredPost = "true"
 #     paginationPages = 2
 #     showFirstLast = false
-
+ 
 [languages]
 [languages.en]
   languageName = "English"
@@ -32,4 +32,3 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 #[languages.fr]
 #  languageName = "Français"
 #  title = "Massively - Version Française"
-

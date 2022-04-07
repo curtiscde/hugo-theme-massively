@@ -2,17 +2,17 @@
 {{ with $data.intro }}
 <div id="intro">
     <h1>
-        {{ range $i, $e := .title }}
-            {{ if $i }} <br/> {{ end }} {{ .line }}
-        {{ end }}
+        {{- range $i, $e := .title -}}
+            {{- if $i -}}<br/>{{- end -}} {{- .line -}}
+        {{- end -}}
     </h1>
     <p>
-        {{ range $i, $e := .description }}
-            {{ if $i }} <br/> {{ end }} {{ .line }}
-        {{ end }}
+        {{- range $i, $e := .description -}}
+            {{- if $i -}}<br/>{{- end -}} {{- .line -}}
+        {{- end -}}
     </p>
     <ul class="actions">
         <li><a href="#header" class="button icon solo fa-arrow-down scrolly">{{ i18n "INTRO_CONTINUE" . }}</a></li>
     </ul>
 </div>
-{{ end }}
+{{- end -}}
