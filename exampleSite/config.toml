@@ -29,3 +29,4 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 #[languages.fr]
 #  languageName = "Français"
 #  title = "Massively - Version Française"
+
