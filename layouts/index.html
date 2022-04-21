@@ -13,7 +13,7 @@
 		{{- $posts := where .Data.Pages "Type" $postsFoldername }}
 
 		{{- if .IsHome }}
-		{{- $posts = .Site.RegularPages }}
+		{{- $posts = where .Site.RegularPages "Type" $postsFoldername }}
 		{{- end }}
 
 		{{- $firstPost := first 1 $posts }}
