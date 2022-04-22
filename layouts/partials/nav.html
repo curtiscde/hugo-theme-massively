@@ -3,6 +3,11 @@
 <nav id="nav">
     <ul class="links">
         <li class="active"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
+        {{- with $data.nav.items -}}
+            {{- range $i, $e := . -}}
+                <li><a href='{{ .url | relLangURL }}'>{{- .title -}}</a></li>
+            {{- end -}}
+        {{- end -}}
         {{ with $data.contactinfo }}
         <li><a href='{{ "#footer" | relLangURL }}'>{{ i18n "NAV_CONTACT" . }}</a></li>
         {{ end }}
