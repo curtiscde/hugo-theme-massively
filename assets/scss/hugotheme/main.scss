@@ -1,3 +1,9 @@
 img {
   max-width: 100%;
 }
+
+#wrapper {
+  >.bg {
+    background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../"+ $backgroundPath);
+  }
+}

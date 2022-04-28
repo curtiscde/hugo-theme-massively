@@ -15,8 +15,7 @@
 */
 
 // Variables
-	$backgroundPath: "{{ .Site.Params.backgroundPath | default "images/bg.jpg" }}";
-
+$backgroundPath: "{{ .Site.Params.backgroundPath | default "images/bg.jpg" }}";
 
 // Breakpoints.
 
