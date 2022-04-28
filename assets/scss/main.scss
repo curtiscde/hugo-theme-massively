@@ -14,6 +14,9 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// Variables
+$backgroundPath: "{{ .Site.Params.backgroundPath | default "images/bg.jpg" }}";
+
 // Breakpoints.
 
 @include breakpoints((default: (1681px, null),

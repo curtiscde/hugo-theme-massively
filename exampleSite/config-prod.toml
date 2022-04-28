@@ -6,11 +6,15 @@ googleanalytics = ""
 disqusShortname = ""
 disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
+
+
 # [params]
   # set below parameter to define a favicon
   # favicon = "favicon.ico"
   # set to change date format
   # dateFormat = "2.1.2006"
+  # backgroundPath = "images/bg.jpg"
+
 # Below parameters can be set to override default post settings
 # [params.posts]
 #     folderName = "post"
