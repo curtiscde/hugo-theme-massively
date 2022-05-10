@@ -1,11 +1,12 @@
 <!-- Nav -->
 {{ $data := index .Site.Data .Site.Language.Lang }}
+{{ $currentPage := .Page }}
 <nav id="nav">
     <ul class="links">
-        <li class="active"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
+        <li class="{{ if eq ($currentPage.RelPermalink) (print `/`) }}active{{end}}"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
         {{- with $data.nav.items -}}
             {{- range $i, $e := . -}}
-                <li><a href='{{ .url | relLangURL }}'>{{- .title -}}</a></li>
+                <li class="{{ if eq ($currentPage.RelPermalink) (print .url `/`) }}active{{end}}"><a href='{{ .url | relLangURL }}'>{{- .title -}}</a></li>
             {{- end -}}
         {{- end -}}
         {{ with $data.contactinfo }}
