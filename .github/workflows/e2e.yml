@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  min_hugo_build:
     name: hugo min version
     runs-on: ubuntu-latest
 
@@ -29,7 +29,7 @@ jobs:
     - run: npm ci
     - run: npm run e2e:headless
 
-  build:
+  max_hugo_build:
     name: hugo max version
     runs-on: ubuntu-latest
 
