@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: hugo min version
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,6 +20,28 @@ jobs:
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: "0.54.0"
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run e2e:headless
+
+  build:
+    name: hugo max version
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: "0.94.2"
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
