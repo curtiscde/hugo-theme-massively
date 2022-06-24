@@ -33,6 +33,7 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 
 ### Supported Languages
  - [English](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/en.toml)
+ - [Dutch](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/nl.toml)
  - [French](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/fr.toml)
  - [Japanese](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/ja.toml)
  - [Simplified Chinese](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/zh.toml)
