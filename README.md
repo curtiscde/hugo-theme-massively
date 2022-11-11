@@ -67,6 +67,12 @@ $ cd exampleSite
 $ hugo server --themesDir ../..
 ```
 
+#### Upgrading max compatible version of theme
+
+```shell
+npm run updateMaxVersion -- -- {version}
+```
+
 ## Original Theme Credits
 
  - [Massively by HTML5 UP](https://html5up.net/massively)
