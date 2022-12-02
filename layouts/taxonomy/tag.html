@@ -1,3 +1,4 @@
+{{ $dateformat := $.Site.Params.tagsDateFormat | default "2006-01" }}
 {{ partial "htmlhead" . }}
 	<body lang='{{ .Site.Language.Lang | default "en-us" }}' class="is-preload">
 
@@ -13,27 +14,20 @@
 						<!-- Post -->
                         <section class="post">
                             <header class="major">
-                                {{ if not .Date.IsZero }}
-                                <span class="date">{{ .Date.Format (.Site.Params.DateFormat | default "January 2, 2006") }}</span>
-                                {{ end }}
                                 <h1>{{ .Title }}</h1>
-                                <p>{{ .Description }}</p>
-
-                                {{ partial "posttags" . }}
 
                             </header>
-                            {{ if .Params.image }}
-                            <div class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></div>
-                            {{ end }}
-                            {{ .Content }}
 
-                            {{ partial "tagcloud" . }}
 
+                            <ul>
+                              {{ range .Data.Pages }}
+                              <li>
+                            	  <a href="{{.RelPermalink}}">{{ .Title }}</a> ({{ .Date.Format $dateformat }})
+                              </li>
+                              {{ end }}
+                            </ul>
                             {{ partial "postcustom" . }}
                             
-                            {{ if not (eq .Params.disableComments true) }}
-                            {{ template "_internal/disqus.html" . }}
-                            {{ end }}
                         </section>
 
 					</div>

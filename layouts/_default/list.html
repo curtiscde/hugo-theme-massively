@@ -13,27 +13,14 @@
 						<!-- Post -->
                         <section class="post">
                             <header class="major">
-                                {{ if not .Date.IsZero }}
-                                <span class="date">{{ .Date.Format (.Site.Params.DateFormat | default "January 2, 2006") }}</span>
-                                {{ end }}
                                 <h1>{{ .Title }}</h1>
-                                <p>{{ .Description }}</p>
-
-                                {{ partial "posttags" . }}
 
                             </header>
-                            {{ if .Params.image }}
-                            <div class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></div>
-                            {{ end }}
-                            {{ .Content }}
 
-                            {{ partial "tagcloud" . }}
+                            {{ partial "terms" . }}
 
                             {{ partial "postcustom" . }}
                             
-                            {{ if not (eq .Params.disableComments true) }}
-                            {{ template "_internal/disqus.html" . }}
-                            {{ end }}
                         </section>
 
 					</div>

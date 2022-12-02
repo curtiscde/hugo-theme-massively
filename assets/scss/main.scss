@@ -59,6 +59,7 @@ $backgroundPath: "{{ .Site.Params.backgroundPath | default "images/bg.jpg" }}";
 @import 'components/list';
 @import 'components/section';
 @import 'components/table';
+@import 'components/tags';
 @import 'components/pagination';
 
 // Layout.
