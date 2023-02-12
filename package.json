@@ -6,8 +6,7 @@
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test hugo-dev http://localhost:1313 cypress",
     "e2e:headless": "start-server-and-test hugo-dev http://localhost:1313 cypress:headless",
-    "hugo-dev": "cd exampleSite && hugo server --themesDir ../..",
-    "updateMaxVersion": "./bin/updateMaxVersion.sh"
+    "hugo-dev": "cd exampleSite && hugo server --themesDir ../.."
   },
   "repository": {
     "type": "git",
