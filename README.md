@@ -18,6 +18,29 @@ See the demo's configuration as an example:
 
 https://github.com/curtiscde/hugo-theme-massively/blob/master/exampleSite/config-prod.toml
 
+### Tags support
+
+In your config file you can control some self evident aspects of the tags, in yaml format:
+
+```yaml
+params:
+(...)
+  # default values
+  # tagsDateFormat: "2006-01"
+  # tagsShow: true
+  # tagsCloudShow: true
+```
+
+Or toml format:
+```toml
+[params]
+(...)
+  # default values
+  # tagsDateFormat = "2006-01"
+  # tagsShow = true
+  # tagsCloudShow = true
+```
+
 #### Hugo Internal Templates
 The theme currently also supports the following ["internal templates" supplied by Hugo](https://gohugo.io/templates/internal/)
 

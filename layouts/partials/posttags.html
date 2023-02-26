@@ -1,0 +1,9 @@
+{{ $tagsShow := $.Site.Params.tagsShow | default true }}
+{{ if and .Params.tags $tagsShow }}
+<span class="post-tags">
+  {{ range .Params.tags }}
+  #<a href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
+  {{ end }}
+</span>
+{{ end }}
+
