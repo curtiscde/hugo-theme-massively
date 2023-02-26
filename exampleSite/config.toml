@@ -1,7 +1,6 @@
 languageCode = "en-us"
 title = "Massively"
 baseURL = "http://localhost:1313/"
-themesDir = "../../"
 theme = "hugo-theme-massively"
 googleanalytics = ""
 disqusShortname = ""
