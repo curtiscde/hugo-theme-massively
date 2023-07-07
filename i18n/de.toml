@@ -1,0 +1,34 @@
+[CONTACT_ADDRESS]
+  other = "Addresse"
+[CONTACT_EMAIL]
+  other = "Email"
+[CONTACT_FORM_FIELD_EMAIL]
+  other = "Email"
+[CONTACT_FORM_FIELD_MESSAGE]
+  other = "Nachricht"
+[CONTACT_FORM_FIELD_NAME]
+  other = "Name"
+[CONTACT_FORM_SUBMIT_SEND_MESSAGE]
+  other = "Nachricht senden"
+[CONTACT_PHONE]
+  other = "Telefon"
+[CONTACT_SOCIAL]
+  other = "Social Media"
+[COPYRIGHT_MESSAGE_1]
+  other = "Design: [HTML5 UP](https://html5up.net)"
+[COPYRIGHT_MESSAGE_2]
+  other = "Hugo Port: [curtiscode](https://curtiscode.dev)"
+[INTRO_CONTINUE]
+  other = "Weiter"
+[NAV_MENU]
+  other = "Menü"
+[NAV_CONTACT]
+  other = "Kontakt"
+[PAGINATION_NEXT]
+  other = "Weiter"
+[PAGINATION_PREVIOUS]
+  other = "Zurück"
+[PAGINATION_FIRST]
+  other = "Erste"
+[PAGINATION_LAST]
+  other = "Letzte"
