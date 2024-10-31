@@ -4,5 +4,5 @@
   command = "hugo --gc --themesDir ../.. --config config-prod.toml"
 
 [build.environment]
-  HUGO_VERSION = "0.54.0"
+  HUGO_VERSION = "0.120.0"
   HUGO_THEME = "repo"
