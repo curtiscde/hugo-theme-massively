@@ -13,8 +13,13 @@
         <p>{{ .Summary }}</p>
         {{ end }}
     </header>
+
     {{ if .Params.image }}
+    {{ if .Params.imageStyle }}
+    <div class="image main"><img style="{{ .Params.imageStyle | safeCSS }}" src="{{ .Params.image | relURL }}" alt="" /></div>
+    {{ else }}
     <a href="{{ .Permalink }}" class="image main"><img src="{{ .Params.image | relURL }}" alt="" /></a>
+    {{ end }}
     {{ end }}
     <ul class="actions">
         <li><a href="{{ .Permalink }}" class="button big">{{ $data.post.linktext }}</a></li>
