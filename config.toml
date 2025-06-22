@@ -1,4 +1,4 @@
 [module]
   [module.hugoVersion]
     min = "0.54.0"
-    max = "0.145.0"
+    max = "0.147.8"
