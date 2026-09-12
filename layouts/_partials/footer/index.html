@@ -1,5 +1,5 @@
 <!-- Footer -->
-{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ $data := index hugo.Data .Site.Language.Lang }}
 <footer id="footer">
     {{ with $data.contactinfo.contactformaction }}
     <section>

@@ -1,16 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "es5",
-      "dom"
-    ],
-    "types": [
-      "cypress"
-    ],
-    "isolatedModules": false,
+    "target": "es2018",
+    "lib": ["es2018", "dom"],
+    "types": ["cypress"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "isolatedModules": false
   },
-  "include": [
-    "**/*.ts"
-  ]
+  "include": ["**/*.ts", "../cypress.config.ts"]
 }

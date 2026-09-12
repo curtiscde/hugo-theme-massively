@@ -1,8 +1,11 @@
 # Hugo Theme Massively
 
-![](https://img.shields.io/badge/Hugo-%5E0.120.0-ff4088?style=flat-square&logo=hugo) [![e2e tests](https://github.com/curtiscde/hugo-theme-massively/actions/workflows/e2e.yml/badge.svg)](https://github.com/curtiscde/hugo-theme-massively/actions/workflows/e2e.yml)
+![](https://img.shields.io/badge/Hugo-%3E%3D0.158.0-ff4088?style=flat-square&logo=hugo) [![e2e tests](https://github.com/curtiscde/hugo-theme-massively/actions/workflows/e2e.yml/badge.svg)](https://github.com/curtiscde/hugo-theme-massively/actions/workflows/e2e.yml)
 
 Massively theme ported from [HTML5 UP](https://html5up.net/) for use with the [Hugo static site generator](https://gohugo.io/).
+
+> **Requires Hugo 0.158.0 or later** (extended edition, for Sass support). Older
+> versions will fail to build — see [CHANGELOG](CHANGELOG.md) for the `7.0.0` notes.
 
 ![](images/device-screenshots.png)
 
@@ -16,14 +19,17 @@ Massively theme ported from [HTML5 UP](https://html5up.net/) for use with the [H
 
 See the demo's configuration as an example:
 
-<https://github.com/curtiscde/hugo-theme-massively/blob/master/exampleSite/config-prod.toml>
+<https://github.com/curtiscde/hugo-theme-massively/blob/master/exampleSite/hugo-prod.toml>
 
-#### Hugo Internal Templates
+#### Hugo Embedded Templates
 
-The theme currently also supports the following ["internal templates" supplied by Hugo](https://gohugo.io/templates/internal/)
+The theme also renders Hugo's [embedded templates](https://gohugo.io/templates/embedded/):
 
-- [Disqus](https://gohugo.io/templates/internal/#disqus)
-- [Google Analytics](https://gohugo.io/templates/internal/#configure-google-analytics)
+- [Disqus](https://gohugo.io/templates/embedded/#disqus) — configure via `services.disqus.shortname`
+- [Google Analytics](https://gohugo.io/templates/embedded/#google-analytics) — configure via `services.googleAnalytics.id`
+
+Because these are now ordinary partials, you can override either of them by adding your
+own `layouts/_partials/disqus.html` or `layouts/_partials/google_analytics.html`.
 
 ### Cover Image
 
@@ -48,7 +54,12 @@ The cover image URL is hard-coded, therefore to replace this add an image to the
 
 ## Custom `<head>`
 
-If you wish to add custom CSS overrides, or other elements in the `<head>`, then this can be done by adding the following to the root of your Hugo app: `layouts/partials/htmlhead.custom.html`. Any content added to this file will then be injected at the end of the `<head>`.
+If you wish to add custom CSS overrides, or other elements in the `<head>`, then this can be done by adding the following to the root of your Hugo app: `layouts/_partials/htmlhead-custom.html`. Any content added to this file will then be injected at the end of the `<head>`.
+
+> **Renamed in `7.0.0`.** This file was previously `layouts/partials/htmlhead.custom.html`.
+> The dot in the old name is now parsed as a template identifier by Hugo's template
+> system, which made the partial resolve to itself. If you were using the old name,
+> rename your file to `htmlhead-custom.html`.
 
 ## Development
 
@@ -58,7 +69,7 @@ If you wish to add custom CSS overrides, or other elements in the `<head>`, then
 
 ```
 cd exampleSite
-hugo --config config-prod.toml
+hugo --config hugo-prod.toml
 ```
 
 #### Running Locally

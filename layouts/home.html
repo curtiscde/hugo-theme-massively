@@ -4,26 +4,22 @@
 		{{- $postsFoldername := .Site.Params.Posts.foldername | default "post" }}
 		{{- $postsPageSize := .Site.Params.Posts.pagesize | default 6 }}
 
-		{{- .Scratch.Set "postsFeaturedPostEnabled" true }}
+		{{- .Store.Set "postsFeaturedPostEnabled" true }}
 		{{- if (or (eq .Site.Params.Posts.featuredpost "false") (eq .Site.Params.Posts.featuredpost false)) }}
-			{{- .Scratch.Set "postsFeaturedPostEnabled" false }}
+			{{- .Store.Set "postsFeaturedPostEnabled" false }}
 		{{- end }}
-		{{- $postsFeaturedPostEnabled := .Scratch.Get "postsFeaturedPostEnabled" }}
+		{{- $postsFeaturedPostEnabled := .Store.Get "postsFeaturedPostEnabled" }}
 
-		{{- $posts := where .Data.Pages "Type" $postsFoldername }}
-
-		{{- if .IsHome }}
-		{{- $posts = where .Site.RegularPages "Type" $postsFoldername }}
-		{{- end }}
+		{{- $posts := where .Site.RegularPages "Type" $postsFoldername }}
 
 		{{- $firstPost := first 1 $posts }}
 
 		{{- if and (eq $postsFeaturedPostEnabled true) (gt (len $posts) 1) -}}
-			{{- .Scratch.Set "postsForPaging" (after 1 $posts) }}
+			{{- .Store.Set "postsForPaging" (after 1 $posts) }}
 		{{- else }}
-			{{- .Scratch.Set "postsForPaging" $posts }}
+			{{- .Store.Set "postsForPaging" $posts }}
 		{{- end -}}
-		{{- $postsForPaging := .Scratch.Get "postsForPaging" -}}
+		{{- $postsForPaging := .Store.Get "postsForPaging" -}}
 
 		{{- $postsPaging := .Paginate $postsForPaging $postsPageSize -}}
 
@@ -41,11 +37,11 @@
 					<div id="main">
 
 						{{- if (eq $postsFeaturedPostEnabled true) }}
-						{{- partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index .Site.Data .Site.Language.Lang)) }}
+						{{- partial "posts/featured.html" (dict "firstpost" $firstPost "siteData" (index hugo.Data .Site.Language.Lang)) }}
 						{{- end }}
 
 						{{- if (not (and (eq (len $posts) 1) (eq $postsFeaturedPostEnabled true))) }}
-							{{- partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index .Site.Data .Site.Language.Lang)) }}
+							{{- partial "posts/list.html" (dict "posts" $postsPaging "siteData" (index hugo.Data .Site.Language.Lang)) }}
 						{{- end }}
 
 						{{- $paginator := .Paginator }}
@@ -60,7 +56,7 @@
 					<a href="#navPanel" id="navPanelToggle">{{ i18n "NAV_MENU" . }}</a>
 			</div>
 
-			{{- template "_internal/google_analytics.html" . }}
+			{{- partial "google_analytics.html" . }}
 			{{- partial "scripts/index" . }}
 
 	</body>
