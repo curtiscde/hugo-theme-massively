@@ -5,8 +5,8 @@ const post = {
 }
 
 describe('Post', () => {
-  before(() => {
-    cy.visit(`http://localhost:1313/post/${post.slug}`);
+  beforeEach(() => {
+    cy.visit(`/post/${post.slug}`);
   });
 
   it('displays date', () => {

@@ -1,6 +1,6 @@
 describe('Generic Page', () => {
-  before(() => {
-    cy.visit('http://localhost:1313/generic-page');
+  beforeEach(() => {
+    cy.visit('/generic-page');
   });
 
   it('displays title', () => {
