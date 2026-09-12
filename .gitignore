@@ -2,4 +2,11 @@ node_modules
 exampleSite/public
 exampleSite/resources
 .publish
-test/videos
+
+# Hugo build lock
+.hugo_build.lock
+
+# Cypress artefacts
+cypress/screenshots
+cypress/videos
+cypress/downloads
