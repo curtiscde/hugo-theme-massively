@@ -3,12 +3,12 @@
 <div id="intro">
     <h1>
         {{- range $i, $e := .title -}}
-            {{- if $i -}}<br/>{{- end -}} {{- .line -}}
+            {{- if $i }} <br/> {{ end -}}{{- .line -}}
         {{- end -}}
     </h1>
     <p>
         {{- range $i, $e := .description -}}
-            {{- if $i -}}<br/>{{- end -}} {{- .line -}}
+            {{- if $i }} <br/> {{ end -}}{{- .line -}}
         {{- end -}}
     </p>
     <ul class="actions">
