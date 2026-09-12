@@ -7,48 +7,36 @@ on:
     branches: [ master ]
 
 jobs:
-  min_hugo_build:
-    name: hugo min version
+  e2e:
+    name: hugo ${{ matrix.hugo-label }}
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        node-version: [16.x]
+        include:
+          # Oldest Hugo the theme claims to support (theme.toml min_version).
+          - hugo-version: "0.158.0"
+            hugo-label: "min (0.158.0)"
+          # Whatever Hugo has shipped most recently.
+          - hugo-version: "latest"
+            hugo-label: "latest"
 
     steps:
+    - uses: actions/checkout@v7
+
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
+      uses: peaceiris/actions-hugo@v3
       with:
-        hugo-version: "0.120.0"
+        hugo-version: ${{ matrix.hugo-version }}
         extended: true
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v7
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 24.x
         cache: 'npm'
+
     - run: npm ci
-    - run: npm run e2e:headless
 
-  max_hugo_build:
-    name: hugo max version
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
-    steps:
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: "0.145.0"
-        extended: true
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
     - run: npm run e2e:headless
