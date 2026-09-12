@@ -1,5 +1,5 @@
 <!-- Nav -->
-{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ $data := index hugo.Data .Site.Language.Lang }}
 {{ $currentPage := .Page }}
 <nav id="nav">
     <ul class="links">
@@ -14,7 +14,7 @@
         {{ end }}
         {{ if .IsTranslated }}
         {{ range .AllTranslations }}
-        <li {{if eq ($.Site.Language) (.Language)}}class="active"{{end}}><a href='{{ .Permalink }}'>{{ .Language.LanguageName }}</a></li>
+        <li {{if eq ($.Site.Language) (.Language)}}class="active"{{end}}><a href='{{ .Permalink }}'>{{ .Language.Label }}</a></li>
         {{ end }}
         {{ end }}
     </ul>
