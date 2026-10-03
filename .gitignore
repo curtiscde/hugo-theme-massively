@@ -10,3 +10,6 @@ exampleSite/resources
 cypress/screenshots
 cypress/videos
 cypress/downloads
+
+# Claude Code worktrees
+.claude/worktrees/
