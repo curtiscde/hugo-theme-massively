@@ -1,12 +1,13 @@
 <!-- Nav -->
-{{ $data := index hugo.Data .Site.Language.Lang }}
+{{ $lang := site.Language.Lang }}
+{{ $data := index hugo.Data $lang }}
 {{ $currentPage := .Page }}
 <nav id="nav">
     <ul class="links">
-        <li class="{{ if eq ($currentPage.RelPermalink) (`/`) }}active{{end}}"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
+        <li class="{{ if eq ($currentPage.RelPermalink) (`/` | relLangURL ) }}active{{end}}"><a href='{{ "/" | relLangURL }}'>{{ .Site.Title }}</a></li>
         {{- with $data.nav.items -}}
             {{- range $i, $e := . -}}
-                <li class="{{ if eq ($currentPage.RelPermalink) (print .url `/`) }}active{{end}}"><a href='{{ .url | relLangURL }}'>{{- .title -}}</a></li>
+                <li class="{{ if eq ($currentPage.RelPermalink | relLangURL) (print .url `/` | relLangURL) }}active{{end}}"><a href='{{ .url | relLangURL }}'>{{- .title -}}</a></li>
             {{- end -}}
         {{- end -}}
         {{ with $data.contactinfo }}
@@ -20,32 +21,29 @@
     </ul>
     {{ with $data.social }}
     <ul class="icons">
-        {{ with .twitter }}
-        <li><a href="{{ . }}" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        {{ end }}
-        {{ with .facebook }}
-        <li><a href="{{ . }}" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-        {{ end }}
-        {{ with .instagram }}
-        <li><a href="{{ . }}" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-        {{ end }}
-        {{ with .linkedin }}
-        <li><a href="{{ . }}" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        {{ end }}
-        {{ with .github }}
-        <li><a href="{{ . }}" class="icon fa-github"><span class="label">GitHub</span></a></li>
-        {{ end }}
-        {{ with .youtube }}
-        <li><a href="{{ . }}" class="icon fa-youtube"><span class="label">Youtube</span></a></li>
-        {{ end }}
-        {{ with .googleplus }}
-        <li><a href="{{ . }}" class="icon fa-google-plus"><span class="label">Google Plus</span></a></li>
-        {{ end }}
-        {{ with .lastfm }}
-        <li><a href="{{ . }}" class="icon fa-lastfm"><span class="label">Last.fm</span></a></li>
-        {{ end }}
-        {{ with .flickr }}
-        <li><a href="{{ . }}" class="icon fa-flickr"><span class="label">Flickr</span></a></li>
+	{{ $isSlice := reflect.IsSlice . }}
+        {{ range $key, $value := . }}
+	  {{ $service := "" }}
+          {{ $url := "" }}
+          {{ $iconClass := "" }}
+
+          {{ if $isSlice }}
+            {{/* List of Maps */}}
+            {{ $service = $value.service }}
+            {{ $url = $value.url }}
+            {{ with $value.class }}
+              {{ $iconClass = . }}
+            {{ else }}
+              {{ $iconClass = printf "fa-%s" ($service | lower) }}
+            {{ end }}
+          {{ else }}
+            {{/* Old Key-Value Map */}}
+            {{ $service = $key }}
+            {{ $url = $value }}
+            {{ $iconClass = printf "fa-%s" ($service | lower) }}
+          {{ end }}
+
+	<li><a rel="me" href="{{ $url }}" class="icon alt {{ $iconClass }}"><span class="label">{{ $service }}</span></a></li>
         {{ end }}
     </ul>
     {{ end }}
