@@ -51,33 +51,31 @@
         <section>
             <h3>{{ i18n "CONTACT_SOCIAL" . }}</h3>
             <ul class="icons alt">
-                {{ with .twitter}}
-                <li><a href="{{ . }}" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+              {{ $isSlice := reflect.IsSlice . }}
+              {{ range $key, $value := . }}
+                {{ $service := "" }}
+                {{ $url := "" }}
+                {{ $iconClass := "" }}
+
+                {{ if $isSlice }}
+                  {{/* List of Maps */}}
+                  {{ $service = $value.service }}
+                  {{ $url = $value.url }}
+                  {{ with $value.class }}
+                    {{ $iconClass = . }}
+                  {{ else }}
+                    {{ $iconClass = printf "fa-%s" ($service | lower) }}
+                  {{ end }}
+                {{ else }}
+                  {{/* Old Key-Value Map */}}
+                  {{ $service = $key }}
+                  {{ $url = $value }}
+                  {{ $iconClass = printf "fa-%s" ($service | lower) }}
                 {{ end }}
-                {{ with .facebook}}
-                <li><a href="{{ . }}" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-                {{ end }}
-                {{ with .instagram}}
-                <li><a href="{{ . }}" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-                {{ end }}
-                {{ with .linkedin}}
-                <li><a href="{{ . }}" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                {{ end }}
-                {{ with .github}}
-                <li><a href="{{ . }}" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-                {{ end }}
-                {{ with .youtube}}
-                <li><a href="{{ . }}" class="icon alt fa-youtube"><span class="label">Youtube</span></a></li>
-                {{ end }}
-                {{ with .googleplus}}
-                <li><a href="{{ . }}" class="icon alt fa-google-plus"><span class="label">Google Plus</span></a></li>
-                {{ end }}
-                {{ with .lastfm}}
-                <li><a href="{{ . }}" class="icon alt fa-lastfm"><span class="label">Last.fm</span></a></li>
-                {{ end }}
-                {{ with .flickr}}
-                <li><a href="{{ . }}" class="icon alt fa-flickr"><span class="label">Flickr</span></a></li>
-                {{ end }}
+
+                <li><a rel="me" href="{{ $url }}" class="icon alt {{ $iconClass }}"><span class="label">{{ $service }}</span></a></li>
+
+              {{ end }}
             </ul>
         </section>
         {{ end }}
